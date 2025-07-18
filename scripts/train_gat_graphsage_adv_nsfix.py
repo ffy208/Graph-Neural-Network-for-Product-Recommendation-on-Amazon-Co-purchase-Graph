@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-GAT Training Script - Standalone Fixed Version
-=============================================
-This is a standalone version of the GAT training script with corrected negative-sampling logic.
-It combines the advanced features from train_gat_graphsage_adv.py with the fixes from 
-train_gat_graphsage_adv_nsfix.py into a single, independent file.
-"""
-# -------------------- Additional Explanatory Notes --------------------
+
+# GAT Training Script
+#  ----------------------------------------------------------------------
 # Purpose: Train a Graph Attention Network (GAT) for link prediction on the
 # Amazon products similarity graph while retaining the original GraphSage data
 # preparation pipeline.
