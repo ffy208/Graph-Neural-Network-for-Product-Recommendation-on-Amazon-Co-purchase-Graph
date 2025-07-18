@@ -1,0 +1,65 @@
+
+🔍 Loading data and building inductive split...
+
+Generated 515791 negative edges
+Generated 32866 negative edges
+✅ Graph: 322152 nodes, 515791 edges
+✅ Graph: 80539 nodes, 32866 edges
+✅ Train edges: 1031582, Validation edges: 65732
+
+🎲 Trial 1/1
+🔧 Config: {'batch_size': 512, 'num_epochs': 35, 'learning_rate': 0.0001, 'hidden_feats': 256, 'out_feats': 128, 'num_layers': 2, 'dropout': 0.25, 'train_ratio': 0.8}
+Use L2 regularization with weight decay 2e-5
+
+📦 Preparing dataloaders...
+
+✅ Epoch 1 | Loss: 0.5918 | AUC: 0.7940 | AP: 0.7860 | Val AUC: 0.9078 | Time: 64.46s | GPU: 6235.99 MB
+✅ Epoch 2 | Loss: 0.5332 | AUC: 0.8706 | AP: 0.8678 | Val AUC: 0.9389 | Time: 63.30s | GPU: 6239.62 MB
+✅ Epoch 3 | Loss: 0.5123 | AUC: 0.8931 | AP: 0.8938 | Val AUC: 0.9496 | Time: 63.20s | GPU: 6239.62 MB
+✅ Epoch 4 | Loss: 0.5003 | AUC: 0.9045 | AP: 0.9064 | Val AUC: 0.9573 | Time: 63.24s | GPU: 6239.62 MB
+✅ Epoch 5 | Loss: 0.4909 | AUC: 0.9130 | AP: 0.9155 | Val AUC: 0.9600 | Time: 62.96s | GPU: 6239.62 MB
+✅ Epoch 6 | Loss: 0.4833 | AUC: 0.9197 | AP: 0.9225 | Val AUC: 0.9641 | Time: 63.40s | GPU: 6239.62 MB
+✅ Epoch 7 | Loss: 0.4764 | AUC: 0.9254 | AP: 0.9288 | Val AUC: 0.9681 | Time: 63.04s | GPU: 6239.62 MB
+✅ Epoch 8 | Loss: 0.4704 | AUC: 0.9301 | AP: 0.9338 | Val AUC: 0.9692 | Time: 62.93s | GPU: 6239.62 MB
+✅ Epoch 9 | Loss: 0.4649 | AUC: 0.9342 | AP: 0.9382 | Val AUC: 0.9714 | Time: 63.30s | GPU: 6239.62 MB
+✅ Epoch 10 | Loss: 0.4600 | AUC: 0.9376 | AP: 0.9420 | Val AUC: 0.9712 | Time: 63.07s | GPU: 6239.62 MB
+✅ Epoch 11 | Loss: 0.4553 | AUC: 0.9410 | AP: 0.9454 | Val AUC: 0.9732 | Time: 63.03s | GPU: 6239.62 MB
+✅ Epoch 12 | Loss: 0.4509 | AUC: 0.9437 | AP: 0.9482 | Val AUC: 0.9750 | Time: 63.19s | GPU: 6239.62 MB
+✅ Epoch 13 | Loss: 0.4467 | AUC: 0.9462 | AP: 0.9509 | Val AUC: 0.9757 | Time: 63.22s | GPU: 6239.62 MB
+✅ Epoch 14 | Loss: 0.4427 | AUC: 0.9485 | AP: 0.9533 | Val AUC: 0.9757 | Time: 63.07s | GPU: 6240.13 MB
+✅ Epoch 15 | Loss: 0.4389 | AUC: 0.9505 | AP: 0.9554 | Val AUC: 0.9756 | Time: 64.36s | GPU: 6240.13 MB
+✅ Epoch 16 | Loss: 0.4352 | AUC: 0.9525 | AP: 0.9573 | Val AUC: 0.9768 | Time: 64.53s | GPU: 6240.13 MB
+✅ Epoch 17 | Loss: 0.4314 | AUC: 0.9543 | AP: 0.9591 | Val AUC: 0.9781 | Time: 64.23s | GPU: 6240.13 MB
+✅ Epoch 18 | Loss: 0.4280 | AUC: 0.9559 | AP: 0.9607 | Val AUC: 0.9762 | Time: 64.23s | GPU: 6240.13 MB
+✅ Epoch 19 | Loss: 0.4245 | AUC: 0.9573 | AP: 0.9623 | Val AUC: 0.9780 | Time: 64.38s | GPU: 6240.13 MB
+✅ Epoch 20 | Loss: 0.4211 | AUC: 0.9587 | AP: 0.9637 | Val AUC: 0.9780 | Time: 64.50s | GPU: 6240.13 MB
+✅ Epoch 21 | Loss: 0.4179 | AUC: 0.9599 | AP: 0.9649 | Val AUC: 0.9783 | Time: 64.33s | GPU: 6240.13 MB
+✅ Epoch 22 | Loss: 0.4143 | AUC: 0.9612 | AP: 0.9662 | Val AUC: 0.9785 | Time: 64.21s | GPU: 6240.13 MB
+✅ Epoch 23 | Loss: 0.4109 | AUC: 0.9625 | AP: 0.9674 | Val AUC: 0.9778 | Time: 64.46s | GPU: 6240.13 MB
+✅ Epoch 24 | Loss: 0.4075 | AUC: 0.9636 | AP: 0.9684 | Val AUC: 0.9791 | Time: 64.07s | GPU: 6240.13 MB
+✅ Epoch 25 | Loss: 0.4043 | AUC: 0.9646 | AP: 0.9694 | Val AUC: 0.9778 | Time: 63.73s | GPU: 6240.13 MB
+✅ Epoch 26 | Loss: 0.4011 | AUC: 0.9656 | AP: 0.9704 | Val AUC: 0.9775 | Time: 63.87s | GPU: 6240.13 MB
+✅ Epoch 27 | Loss: 0.3977 | AUC: 0.9665 | AP: 0.9713 | Val AUC: 0.9772 | Time: 63.66s | GPU: 6240.13 MB
+✅ Epoch 28 | Loss: 0.3944 | AUC: 0.9674 | AP: 0.9721 | Val AUC: 0.9773 | Time: 63.64s | GPU: 6240.13 MB
+✅ Epoch 29 | Loss: 0.3912 | AUC: 0.9682 | AP: 0.9729 | Val AUC: 0.9770 | Time: 63.83s | GPU: 6240.13 MB
+✅ Epoch 30 | Loss: 0.3881 | AUC: 0.9690 | AP: 0.9736 | Val AUC: 0.9767 | Time: 63.80s | GPU: 6240.13 MB
+✅ Epoch 31 | Loss: 0.3846 | AUC: 0.9699 | AP: 0.9744 | Val AUC: 0.9753 | Time: 63.97s | GPU: 6240.13 MB
+✅ Epoch 32 | Loss: 0.3815 | AUC: 0.9706 | AP: 0.9751 | Val AUC: 0.9758 | Time: 64.14s | GPU: 6240.39 MB
+✅ Epoch 33 | Loss: 0.3783 | AUC: 0.9713 | AP: 0.9757 | Val AUC: 0.9752 | Time: 63.48s | GPU: 6240.39 MB
+✅ Epoch 34 | Loss: 0.3751 | AUC: 0.9721 | AP: 0.9764 | Val AUC: 0.9755 | Time: 63.53s | GPU: 6240.39 MB
+✅ Epoch 35 | Loss: 0.3723 | AUC: 0.9726 | AP: 0.9769 | Val AUC: 0.9754 | Time: 63.71s | GPU: 6240.39 MB
+🎯 Best epoch in trial 1: Epoch 24 with Val AUC: 0.9791
+
+🏆 Best Config Across All Trials:
+  batch_size: 512
+  num_epochs: 35
+  learning_rate: 0.0001
+  hidden_feats: 256
+  out_feats: 128
+  num_layers: 2
+  dropout: 0.25
+  train_ratio: 0.8
+🥇 Best Validation AUC: 0.9791
+
+📮 Best model saved to: /content/drive/MyDrive/Colab Notebooks/Group-Project/model/best_pinsage_model.pth
+📈 Saved training history plot to: /content/drive/MyDrive/Colab Notebooks/Group-Project/plot/training_history.png
