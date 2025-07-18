@@ -1,0 +1,288 @@
+---------------------------------------
+Begin Slurm Prolog: Jul-17-2025 17:31:17
+Job ID:    2700911
+User ID:   fyang365
+Account:   coc
+Job name:  gat_c4
+Partition: ice-gpu
+QOS:       coc-ice
+---------------------------------------
+==========================================
+GAT Training Script - c4
+Job ID: 2700911  Nodes: atl1-1-03-013-13-0
+Log File: /home/hice1/fyang365/scratch/Group-Project/logs/train_c4_20250717_173117.log
+==========================================
+Params: --epochs 150 --hidden_dim 320 --heads 2 --num_layers 2         --lr 0.005 --weight_decay 0.0003 --dropout 0.015 --neg_ratio 0.30         --pos_weight 2 --mix_alpha 0.0 --scheduler cosine
+==========================================
+Requirement already satisfied: scikit-learn in /home/hice1/fyang365/.conda/envs/gat_env/lib/python3.9/site-packages (1.6.1)
+Requirement already satisfied: numpy>=1.19.5 in /home/hice1/fyang365/.conda/envs/gat_env/lib/python3.9/site-packages (from scikit-learn) (2.0.2)
+Requirement already satisfied: scipy>=1.6.0 in /home/hice1/fyang365/.conda/envs/gat_env/lib/python3.9/site-packages (from scikit-learn) (1.13.1)
+Requirement already satisfied: joblib>=1.2.0 in /home/hice1/fyang365/.conda/envs/gat_env/lib/python3.9/site-packages (from scikit-learn) (1.5.1)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /home/hice1/fyang365/.conda/envs/gat_env/lib/python3.9/site-packages (from scikit-learn) (3.6.0)
+Original arguments: hidden_dim=320, out_dim=16, heads=2, num_layers=2
+Warning: out_dim (16) != hidden_dim*heads (640)
+Auto-fixing out_dim from 16 to 640
+Fixed arguments: hidden_dim=320, out_dim=640, heads=2, num_layers=2
+[2025-07-17 17:31:43] Starting GAT training based on GraphSage.ipynb pipeline
+[2025-07-17 17:31:43] Log file: logs/gat_training_20250717_173143.log
+[2025-07-17 17:31:43] Arguments: Namespace(epochs=150, lr=0.005, weight_decay=0.0003, patience=20, hidden_dim=320, out_dim=640, heads=2, num_layers=2, dropout=0.015, neg_ratio=0.3, inductive=False, pos_weight=2.0, use_focal=False, focal_gamma=2.0, mix_alpha=0.0, scheduler='cosine', milestones='80,120', lr_gamma=0.1)
+[2025-07-17 17:31:43] Using device: cuda
+[2025-07-17 17:31:43] Loading data from data/items_cleaned.csv...
+[2025-07-17 17:31:44] Loaded 402691 items
+[2025-07-17 17:31:44] Created mapping for 402691 unique ASINs
+[2025-07-17 17:31:44] Processing features...
+[2025-07-17 17:31:44] Processed 7 features
+[2025-07-17 17:31:44] Building graph from similarity relationships...
+[2025-07-17 17:31:58] Graph built: 402691 nodes, 808185 edges
+[2025-07-17 17:31:58] Performing transductive split (edge-based split)...
+[2025-07-17 17:31:58] Transductive edge split - Train: 1293098 edges, Val: 1293098 edges, Test: 1454734 edges
+[2025-07-17 17:31:58] Model created - Input dim: 7, Hidden dim: 320, Output dim: 640, Heads: 2, Layers: 2
+[2025-07-17 17:31:58] Using BCEWithLogitsLoss with pos_weight=2.0
+[2025-07-17 17:31:58] Using CosineAnnealingLR with T_max=150, eta_min=5e-05
+[2025-07-17 17:31:58] Starting training for 150 epochs...
+[2025-07-17 17:32:01] Epoch   1/150 - Train Loss: 0.5078, Train AUC: 0.8436, Val Loss: 0.7185, Val AUC: 0.8435, Time: 3.23s
+[2025-07-17 17:32:01] New best model saved with Val AUC: 0.8435
+[2025-07-17 17:32:04] Epoch   2/150 - Train Loss: 0.7218, Train AUC: 0.8756, Val Loss: 0.4561, Val AUC: 0.8753, Time: 2.60s
+[2025-07-17 17:32:04] New best model saved with Val AUC: 0.8753
+[2025-07-17 17:32:07] Epoch   3/150 - Train Loss: 0.4601, Train AUC: 0.8783, Val Loss: 0.4461, Val AUC: 0.8791, Time: 2.59s
+[2025-07-17 17:32:07] New best model saved with Val AUC: 0.8791
+[2025-07-17 17:32:09] Epoch   4/150 - Train Loss: 0.4495, Train AUC: 0.8688, Val Loss: 0.4689, Val AUC: 0.8679, Time: 2.57s
+[2025-07-17 17:32:12] Epoch   5/150 - Train Loss: 0.4693, Train AUC: 0.8758, Val Loss: 0.4426, Val AUC: 0.8762, Time: 2.55s
+[2025-07-17 17:32:15] Epoch   6/150 - Train Loss: 0.4451, Train AUC: 0.8869, Val Loss: 0.4284, Val AUC: 0.8864, Time: 2.58s
+[2025-07-17 17:32:15] New best model saved with Val AUC: 0.8864
+[2025-07-17 17:32:17] Epoch   7/150 - Train Loss: 0.4315, Train AUC: 0.8904, Val Loss: 0.4304, Val AUC: 0.8896, Time: 2.58s
+[2025-07-17 17:32:17] New best model saved with Val AUC: 0.8896
+[2025-07-17 17:32:20] Epoch   8/150 - Train Loss: 0.4318, Train AUC: 0.8938, Val Loss: 0.4237, Val AUC: 0.8939, Time: 2.57s
+[2025-07-17 17:32:20] New best model saved with Val AUC: 0.8939
+[2025-07-17 17:32:23] Epoch   9/150 - Train Loss: 0.4269, Train AUC: 0.8924, Val Loss: 0.4223, Val AUC: 0.8921, Time: 2.57s
+[2025-07-17 17:32:25] Epoch  10/150 - Train Loss: 0.4243, Train AUC: 0.8887, Val Loss: 0.4222, Val AUC: 0.8890, Time: 2.55s
+[2025-07-17 17:32:28] Epoch  11/150 - Train Loss: 0.4255, Train AUC: 0.8924, Val Loss: 0.4162, Val AUC: 0.8928, Time: 2.55s
+[2025-07-17 17:32:31] Epoch  12/150 - Train Loss: 0.4191, Train AUC: 0.8961, Val Loss: 0.4089, Val AUC: 0.8968, Time: 2.54s
+[2025-07-17 17:32:31] New best model saved with Val AUC: 0.8968
+[2025-07-17 17:32:33] Epoch  13/150 - Train Loss: 0.4119, Train AUC: 0.8999, Val Loss: 0.4042, Val AUC: 0.8999, Time: 2.58s
+[2025-07-17 17:32:33] New best model saved with Val AUC: 0.8999
+[2025-07-17 17:32:36] Epoch  14/150 - Train Loss: 0.4064, Train AUC: 0.9037, Val Loss: 0.3990, Val AUC: 0.9042, Time: 2.56s
+[2025-07-17 17:32:36] New best model saved with Val AUC: 0.9042
+[2025-07-17 17:32:39] Epoch  15/150 - Train Loss: 0.4022, Train AUC: 0.9060, Val Loss: 0.3979, Val AUC: 0.9055, Time: 2.57s
+[2025-07-17 17:32:39] New best model saved with Val AUC: 0.9055
+[2025-07-17 17:32:41] Epoch  16/150 - Train Loss: 0.4004, Train AUC: 0.9097, Val Loss: 0.3927, Val AUC: 0.9096, Time: 2.58s
+[2025-07-17 17:32:41] New best model saved with Val AUC: 0.9096
+[2025-07-17 17:32:44] Epoch  17/150 - Train Loss: 0.3940, Train AUC: 0.9143, Val Loss: 0.3860, Val AUC: 0.9135, Time: 2.56s
+[2025-07-17 17:32:44] New best model saved with Val AUC: 0.9135
+[2025-07-17 17:32:47] Epoch  18/150 - Train Loss: 0.3895, Train AUC: 0.9166, Val Loss: 0.3788, Val AUC: 0.9170, Time: 2.57s
+[2025-07-17 17:32:47] New best model saved with Val AUC: 0.9170
+[2025-07-17 17:32:49] Epoch  19/150 - Train Loss: 0.3834, Train AUC: 0.9164, Val Loss: 0.3765, Val AUC: 0.9170, Time: 2.54s
+[2025-07-17 17:32:52] Epoch  20/150 - Train Loss: 0.3806, Train AUC: 0.9183, Val Loss: 0.3731, Val AUC: 0.9184, Time: 2.54s
+[2025-07-17 17:32:52] New best model saved with Val AUC: 0.9184
+[2025-07-17 17:32:55] Epoch  21/150 - Train Loss: 0.3772, Train AUC: 0.9215, Val Loss: 0.3678, Val AUC: 0.9216, Time: 2.56s
+[2025-07-17 17:32:55] New best model saved with Val AUC: 0.9216
+[2025-07-17 17:32:57] Epoch  22/150 - Train Loss: 0.3741, Train AUC: 0.9238, Val Loss: 0.3651, Val AUC: 0.9237, Time: 2.57s
+[2025-07-17 17:32:57] New best model saved with Val AUC: 0.9237
+[2025-07-17 17:33:00] Epoch  23/150 - Train Loss: 0.3704, Train AUC: 0.9262, Val Loss: 0.3633, Val AUC: 0.9259, Time: 2.57s
+[2025-07-17 17:33:00] New best model saved with Val AUC: 0.9259
+[2025-07-17 17:33:03] Epoch  24/150 - Train Loss: 0.3671, Train AUC: 0.9294, Val Loss: 0.3584, Val AUC: 0.9295, Time: 2.57s
+[2025-07-17 17:33:03] New best model saved with Val AUC: 0.9295
+[2025-07-17 17:33:05] Epoch  25/150 - Train Loss: 0.3630, Train AUC: 0.9318, Val Loss: 0.3550, Val AUC: 0.9320, Time: 2.54s
+[2025-07-17 17:33:05] New best model saved with Val AUC: 0.9320
+[2025-07-17 17:33:08] Epoch  26/150 - Train Loss: 0.3595, Train AUC: 0.9346, Val Loss: 0.3513, Val AUC: 0.9341, Time: 2.54s
+[2025-07-17 17:33:08] New best model saved with Val AUC: 0.9341
+[2025-07-17 17:33:11] Epoch  27/150 - Train Loss: 0.3557, Train AUC: 0.9362, Val Loss: 0.3472, Val AUC: 0.9357, Time: 2.55s
+[2025-07-17 17:33:11] New best model saved with Val AUC: 0.9357
+[2025-07-17 17:33:13] Epoch  28/150 - Train Loss: 0.3503, Train AUC: 0.9377, Val Loss: 0.3424, Val AUC: 0.9375, Time: 2.55s
+[2025-07-17 17:33:13] New best model saved with Val AUC: 0.9375
+[2025-07-17 17:33:16] Epoch  29/150 - Train Loss: 0.3479, Train AUC: 0.9390, Val Loss: 0.3410, Val AUC: 0.9385, Time: 2.56s
+[2025-07-17 17:33:16] New best model saved with Val AUC: 0.9385
+[2025-07-17 17:33:19] Epoch  30/150 - Train Loss: 0.3453, Train AUC: 0.9405, Val Loss: 0.3381, Val AUC: 0.9410, Time: 2.55s
+[2025-07-17 17:33:19] New best model saved with Val AUC: 0.9410
+[2025-07-17 17:33:21] Epoch  31/150 - Train Loss: 0.3441, Train AUC: 0.9399, Val Loss: 0.3433, Val AUC: 0.9404, Time: 2.54s
+[2025-07-17 17:33:24] Epoch  32/150 - Train Loss: 0.3483, Train AUC: 0.9425, Val Loss: 0.3411, Val AUC: 0.9424, Time: 2.54s
+[2025-07-17 17:33:24] New best model saved with Val AUC: 0.9424
+[2025-07-17 17:33:27] Epoch  33/150 - Train Loss: 0.3470, Train AUC: 0.9450, Val Loss: 0.3344, Val AUC: 0.9446, Time: 2.54s
+[2025-07-17 17:33:27] New best model saved with Val AUC: 0.9446
+[2025-07-17 17:33:29] Epoch  34/150 - Train Loss: 0.3393, Train AUC: 0.9465, Val Loss: 0.3292, Val AUC: 0.9462, Time: 2.55s
+[2025-07-17 17:33:29] New best model saved with Val AUC: 0.9462
+[2025-07-17 17:33:32] Epoch  35/150 - Train Loss: 0.3338, Train AUC: 0.9468, Val Loss: 0.3279, Val AUC: 0.9476, Time: 2.53s
+[2025-07-17 17:33:32] New best model saved with Val AUC: 0.9476
+[2025-07-17 17:33:35] Epoch  36/150 - Train Loss: 0.3328, Train AUC: 0.9491, Val Loss: 0.3291, Val AUC: 0.9491, Time: 2.55s
+[2025-07-17 17:33:35] New best model saved with Val AUC: 0.9491
+[2025-07-17 17:33:37] Epoch  37/150 - Train Loss: 0.3329, Train AUC: 0.9508, Val Loss: 0.3259, Val AUC: 0.9505, Time: 2.52s
+[2025-07-17 17:33:37] New best model saved with Val AUC: 0.9505
+[2025-07-17 17:33:40] Epoch  38/150 - Train Loss: 0.3301, Train AUC: 0.9522, Val Loss: 0.3199, Val AUC: 0.9528, Time: 2.54s
+[2025-07-17 17:33:40] New best model saved with Val AUC: 0.9528
+[2025-07-17 17:33:42] Epoch  39/150 - Train Loss: 0.3239, Train AUC: 0.9533, Val Loss: 0.3191, Val AUC: 0.9532, Time: 2.54s
+[2025-07-17 17:33:43] New best model saved with Val AUC: 0.9532
+[2025-07-17 17:33:45] Epoch  40/150 - Train Loss: 0.3233, Train AUC: 0.9540, Val Loss: 0.3168, Val AUC: 0.9540, Time: 2.54s
+[2025-07-17 17:33:45] New best model saved with Val AUC: 0.9540
+[2025-07-17 17:33:48] Epoch  41/150 - Train Loss: 0.3210, Train AUC: 0.9540, Val Loss: 0.3144, Val AUC: 0.9543, Time: 2.54s
+[2025-07-17 17:33:48] New best model saved with Val AUC: 0.9543
+[2025-07-17 17:33:50] Epoch  42/150 - Train Loss: 0.3184, Train AUC: 0.9544, Val Loss: 0.3157, Val AUC: 0.9543, Time: 2.55s
+[2025-07-17 17:33:53] Epoch  43/150 - Train Loss: 0.3194, Train AUC: 0.9568, Val Loss: 0.3125, Val AUC: 0.9569, Time: 2.53s
+[2025-07-17 17:33:53] New best model saved with Val AUC: 0.9569
+[2025-07-17 17:33:56] Epoch  44/150 - Train Loss: 0.3170, Train AUC: 0.9577, Val Loss: 0.3099, Val AUC: 0.9579, Time: 2.56s
+[2025-07-17 17:33:56] New best model saved with Val AUC: 0.9579
+[2025-07-17 17:33:58] Epoch  45/150 - Train Loss: 0.3155, Train AUC: 0.9566, Val Loss: 0.3095, Val AUC: 0.9567, Time: 2.55s
+[2025-07-17 17:34:01] Epoch  46/150 - Train Loss: 0.3148, Train AUC: 0.9579, Val Loss: 0.3080, Val AUC: 0.9579, Time: 2.56s
+[2025-07-17 17:34:01] New best model saved with Val AUC: 0.9579
+[2025-07-17 17:34:04] Epoch  47/150 - Train Loss: 0.3132, Train AUC: 0.9592, Val Loss: 0.3081, Val AUC: 0.9593, Time: 2.56s
+[2025-07-17 17:34:04] New best model saved with Val AUC: 0.9593
+[2025-07-17 17:34:06] Epoch  48/150 - Train Loss: 0.3125, Train AUC: 0.9589, Val Loss: 0.3066, Val AUC: 0.9593, Time: 2.58s
+[2025-07-17 17:34:06] New best model saved with Val AUC: 0.9593
+[2025-07-17 17:34:09] Epoch  49/150 - Train Loss: 0.3119, Train AUC: 0.9596, Val Loss: 0.3057, Val AUC: 0.9597, Time: 2.55s
+[2025-07-17 17:34:09] New best model saved with Val AUC: 0.9597
+[2025-07-17 17:34:12] Epoch  50/150 - Train Loss: 0.3117, Train AUC: 0.9605, Val Loss: 0.3048, Val AUC: 0.9602, Time: 2.55s
+[2025-07-17 17:34:12] New best model saved with Val AUC: 0.9602
+[2025-07-17 17:34:14] Epoch  51/150 - Train Loss: 0.3091, Train AUC: 0.9617, Val Loss: 0.3035, Val AUC: 0.9617, Time: 2.54s
+[2025-07-17 17:34:14] New best model saved with Val AUC: 0.9617
+[2025-07-17 17:34:17] Epoch  52/150 - Train Loss: 0.3087, Train AUC: 0.9617, Val Loss: 0.3029, Val AUC: 0.9616, Time: 2.55s
+[2025-07-17 17:34:20] Epoch  53/150 - Train Loss: 0.3071, Train AUC: 0.9622, Val Loss: 0.3026, Val AUC: 0.9619, Time: 2.56s
+[2025-07-17 17:34:20] New best model saved with Val AUC: 0.9619
+[2025-07-17 17:34:22] Epoch  54/150 - Train Loss: 0.3070, Train AUC: 0.9620, Val Loss: 0.3017, Val AUC: 0.9618, Time: 2.55s
+[2025-07-17 17:34:25] Epoch  55/150 - Train Loss: 0.3064, Train AUC: 0.9621, Val Loss: 0.3003, Val AUC: 0.9618, Time: 2.55s
+[2025-07-17 17:34:28] Epoch  56/150 - Train Loss: 0.3056, Train AUC: 0.9627, Val Loss: 0.2998, Val AUC: 0.9628, Time: 2.55s
+[2025-07-17 17:34:28] New best model saved with Val AUC: 0.9628
+[2025-07-17 17:34:30] Epoch  57/150 - Train Loss: 0.3054, Train AUC: 0.9629, Val Loss: 0.2990, Val AUC: 0.9627, Time: 2.55s
+[2025-07-17 17:34:33] Epoch  58/150 - Train Loss: 0.3042, Train AUC: 0.9626, Val Loss: 0.2984, Val AUC: 0.9628, Time: 2.55s
+[2025-07-17 17:34:33] New best model saved with Val AUC: 0.9628
+[2025-07-17 17:34:36] Epoch  59/150 - Train Loss: 0.3040, Train AUC: 0.9634, Val Loss: 0.2982, Val AUC: 0.9632, Time: 2.54s
+[2025-07-17 17:34:36] New best model saved with Val AUC: 0.9632
+[2025-07-17 17:34:38] Epoch  60/150 - Train Loss: 0.3037, Train AUC: 0.9628, Val Loss: 0.2980, Val AUC: 0.9627, Time: 2.55s
+[2025-07-17 17:34:41] Epoch  61/150 - Train Loss: 0.3027, Train AUC: 0.9633, Val Loss: 0.2962, Val AUC: 0.9637, Time: 2.56s
+[2025-07-17 17:34:41] New best model saved with Val AUC: 0.9637
+[2025-07-17 17:34:44] Epoch  62/150 - Train Loss: 0.3038, Train AUC: 0.9636, Val Loss: 0.2967, Val AUC: 0.9635, Time: 2.56s
+[2025-07-17 17:34:46] Epoch  63/150 - Train Loss: 0.3015, Train AUC: 0.9641, Val Loss: 0.2964, Val AUC: 0.9639, Time: 2.55s
+[2025-07-17 17:34:46] New best model saved with Val AUC: 0.9639
+[2025-07-17 17:34:49] Epoch  64/150 - Train Loss: 0.3010, Train AUC: 0.9643, Val Loss: 0.2969, Val AUC: 0.9643, Time: 2.56s
+[2025-07-17 17:34:49] New best model saved with Val AUC: 0.9643
+[2025-07-17 17:34:52] Epoch  65/150 - Train Loss: 0.3009, Train AUC: 0.9646, Val Loss: 0.2963, Val AUC: 0.9642, Time: 2.56s
+[2025-07-17 17:34:54] Epoch  66/150 - Train Loss: 0.3015, Train AUC: 0.9648, Val Loss: 0.2953, Val AUC: 0.9650, Time: 2.56s
+[2025-07-17 17:34:54] New best model saved with Val AUC: 0.9650
+[2025-07-17 17:34:57] Epoch  67/150 - Train Loss: 0.3012, Train AUC: 0.9649, Val Loss: 0.2949, Val AUC: 0.9651, Time: 2.55s
+[2025-07-17 17:34:57] New best model saved with Val AUC: 0.9651
+[2025-07-17 17:35:00] Epoch  68/150 - Train Loss: 0.3011, Train AUC: 0.9645, Val Loss: 0.2948, Val AUC: 0.9647, Time: 2.55s
+[2025-07-17 17:35:02] Epoch  69/150 - Train Loss: 0.3007, Train AUC: 0.9648, Val Loss: 0.2951, Val AUC: 0.9645, Time: 2.55s
+[2025-07-17 17:35:05] Epoch  70/150 - Train Loss: 0.2997, Train AUC: 0.9649, Val Loss: 0.2943, Val AUC: 0.9649, Time: 2.54s
+[2025-07-17 17:35:07] Epoch  71/150 - Train Loss: 0.2996, Train AUC: 0.9659, Val Loss: 0.2938, Val AUC: 0.9657, Time: 2.55s
+[2025-07-17 17:35:08] New best model saved with Val AUC: 0.9657
+[2025-07-17 17:35:10] Epoch  72/150 - Train Loss: 0.2990, Train AUC: 0.9658, Val Loss: 0.2936, Val AUC: 0.9657, Time: 2.55s
+[2025-07-17 17:35:13] Epoch  73/150 - Train Loss: 0.2989, Train AUC: 0.9656, Val Loss: 0.2931, Val AUC: 0.9653, Time: 2.54s
+[2025-07-17 17:35:15] Epoch  74/150 - Train Loss: 0.2979, Train AUC: 0.9653, Val Loss: 0.2924, Val AUC: 0.9656, Time: 2.54s
+[2025-07-17 17:35:18] Epoch  75/150 - Train Loss: 0.2980, Train AUC: 0.9652, Val Loss: 0.2935, Val AUC: 0.9653, Time: 2.55s
+[2025-07-17 17:35:21] Epoch  76/150 - Train Loss: 0.2981, Train AUC: 0.9659, Val Loss: 0.2931, Val AUC: 0.9659, Time: 2.55s
+[2025-07-17 17:35:21] New best model saved with Val AUC: 0.9659
+[2025-07-17 17:35:23] Epoch  77/150 - Train Loss: 0.2978, Train AUC: 0.9661, Val Loss: 0.2921, Val AUC: 0.9663, Time: 2.55s
+[2025-07-17 17:35:23] New best model saved with Val AUC: 0.9663
+[2025-07-17 17:35:26] Epoch  78/150 - Train Loss: 0.2970, Train AUC: 0.9663, Val Loss: 0.2919, Val AUC: 0.9660, Time: 2.54s
+[2025-07-17 17:35:29] Epoch  79/150 - Train Loss: 0.2967, Train AUC: 0.9662, Val Loss: 0.2919, Val AUC: 0.9664, Time: 2.54s
+[2025-07-17 17:35:29] New best model saved with Val AUC: 0.9664
+[2025-07-17 17:35:31] Epoch  80/150 - Train Loss: 0.2960, Train AUC: 0.9667, Val Loss: 0.2916, Val AUC: 0.9660, Time: 2.53s
+[2025-07-17 17:35:34] Epoch  81/150 - Train Loss: 0.2971, Train AUC: 0.9665, Val Loss: 0.2911, Val AUC: 0.9663, Time: 2.54s
+[2025-07-17 17:35:37] Epoch  82/150 - Train Loss: 0.2964, Train AUC: 0.9665, Val Loss: 0.2913, Val AUC: 0.9665, Time: 2.55s
+[2025-07-17 17:35:37] New best model saved with Val AUC: 0.9665
+[2025-07-17 17:35:39] Epoch  83/150 - Train Loss: 0.2964, Train AUC: 0.9663, Val Loss: 0.2908, Val AUC: 0.9666, Time: 2.55s
+[2025-07-17 17:35:39] New best model saved with Val AUC: 0.9666
+[2025-07-17 17:35:42] Epoch  84/150 - Train Loss: 0.2963, Train AUC: 0.9669, Val Loss: 0.2907, Val AUC: 0.9668, Time: 2.54s
+[2025-07-17 17:35:42] New best model saved with Val AUC: 0.9668
+[2025-07-17 17:35:45] Epoch  85/150 - Train Loss: 0.2959, Train AUC: 0.9667, Val Loss: 0.2899, Val AUC: 0.9668, Time: 2.55s
+[2025-07-17 17:35:45] New best model saved with Val AUC: 0.9668
+[2025-07-17 17:35:47] Epoch  86/150 - Train Loss: 0.2955, Train AUC: 0.9670, Val Loss: 0.2897, Val AUC: 0.9669, Time: 2.56s
+[2025-07-17 17:35:47] New best model saved with Val AUC: 0.9669
+[2025-07-17 17:35:50] Epoch  87/150 - Train Loss: 0.2951, Train AUC: 0.9673, Val Loss: 0.2906, Val AUC: 0.9672, Time: 2.55s
+[2025-07-17 17:35:50] New best model saved with Val AUC: 0.9672
+[2025-07-17 17:35:53] Epoch  88/150 - Train Loss: 0.2954, Train AUC: 0.9673, Val Loss: 0.2905, Val AUC: 0.9669, Time: 2.55s
+[2025-07-17 17:35:55] Epoch  89/150 - Train Loss: 0.2945, Train AUC: 0.9664, Val Loss: 0.2897, Val AUC: 0.9669, Time: 2.55s
+[2025-07-17 17:35:58] Epoch  90/150 - Train Loss: 0.2949, Train AUC: 0.9673, Val Loss: 0.2894, Val AUC: 0.9674, Time: 2.55s
+[2025-07-17 17:35:58] New best model saved with Val AUC: 0.9674
+[2025-07-17 17:36:01] Epoch  91/150 - Train Loss: 0.2945, Train AUC: 0.9670, Val Loss: 0.2886, Val AUC: 0.9677, Time: 2.55s
+[2025-07-17 17:36:01] New best model saved with Val AUC: 0.9677
+[2025-07-17 17:36:03] Epoch  92/150 - Train Loss: 0.2940, Train AUC: 0.9675, Val Loss: 0.2897, Val AUC: 0.9671, Time: 2.53s
+[2025-07-17 17:36:06] Epoch  93/150 - Train Loss: 0.2947, Train AUC: 0.9676, Val Loss: 0.2886, Val AUC: 0.9676, Time: 2.55s
+[2025-07-17 17:36:08] Epoch  94/150 - Train Loss: 0.2940, Train AUC: 0.9673, Val Loss: 0.2887, Val AUC: 0.9673, Time: 2.55s
+[2025-07-17 17:36:11] Epoch  95/150 - Train Loss: 0.2947, Train AUC: 0.9673, Val Loss: 0.2892, Val AUC: 0.9671, Time: 2.55s
+[2025-07-17 17:36:14] Epoch  96/150 - Train Loss: 0.2935, Train AUC: 0.9677, Val Loss: 0.2888, Val AUC: 0.9678, Time: 2.55s
+[2025-07-17 17:36:14] New best model saved with Val AUC: 0.9678
+[2025-07-17 17:36:16] Epoch  97/150 - Train Loss: 0.2947, Train AUC: 0.9679, Val Loss: 0.2888, Val AUC: 0.9678, Time: 2.54s
+[2025-07-17 17:36:17] New best model saved with Val AUC: 0.9678
+[2025-07-17 17:36:19] Epoch  98/150 - Train Loss: 0.2928, Train AUC: 0.9678, Val Loss: 0.2878, Val AUC: 0.9680, Time: 2.55s
+[2025-07-17 17:36:19] New best model saved with Val AUC: 0.9680
+[2025-07-17 17:36:22] Epoch  99/150 - Train Loss: 0.2936, Train AUC: 0.9681, Val Loss: 0.2885, Val AUC: 0.9677, Time: 2.54s
+[2025-07-17 17:36:24] Epoch 100/150 - Train Loss: 0.2931, Train AUC: 0.9679, Val Loss: 0.2870, Val AUC: 0.9682, Time: 2.54s
+[2025-07-17 17:36:24] New best model saved with Val AUC: 0.9682
+[2025-07-17 17:36:27] Epoch 101/150 - Train Loss: 0.2936, Train AUC: 0.9678, Val Loss: 0.2880, Val AUC: 0.9675, Time: 2.54s
+[2025-07-17 17:36:30] Epoch 102/150 - Train Loss: 0.2937, Train AUC: 0.9681, Val Loss: 0.2871, Val AUC: 0.9680, Time: 2.56s
+[2025-07-17 17:36:32] Epoch 103/150 - Train Loss: 0.2924, Train AUC: 0.9680, Val Loss: 0.2875, Val AUC: 0.9682, Time: 2.55s
+[2025-07-17 17:36:32] New best model saved with Val AUC: 0.9682
+[2025-07-17 17:36:35] Epoch 104/150 - Train Loss: 0.2929, Train AUC: 0.9682, Val Loss: 0.2873, Val AUC: 0.9682, Time: 2.55s
+[2025-07-17 17:36:38] Epoch 105/150 - Train Loss: 0.2916, Train AUC: 0.9680, Val Loss: 0.2876, Val AUC: 0.9679, Time: 2.55s
+[2025-07-17 17:36:40] Epoch 106/150 - Train Loss: 0.2926, Train AUC: 0.9680, Val Loss: 0.2875, Val AUC: 0.9681, Time: 2.55s
+[2025-07-17 17:36:43] Epoch 107/150 - Train Loss: 0.2940, Train AUC: 0.9684, Val Loss: 0.2874, Val AUC: 0.9682, Time: 2.55s
+[2025-07-17 17:36:46] Epoch 108/150 - Train Loss: 0.2923, Train AUC: 0.9685, Val Loss: 0.2865, Val AUC: 0.9684, Time: 2.56s
+[2025-07-17 17:36:46] New best model saved with Val AUC: 0.9684
+[2025-07-17 17:36:48] Epoch 109/150 - Train Loss: 0.2926, Train AUC: 0.9683, Val Loss: 0.2872, Val AUC: 0.9682, Time: 2.55s
+[2025-07-17 17:36:51] Epoch 110/150 - Train Loss: 0.2920, Train AUC: 0.9683, Val Loss: 0.2869, Val AUC: 0.9685, Time: 2.56s
+[2025-07-17 17:36:51] New best model saved with Val AUC: 0.9685
+[2025-07-17 17:36:54] Epoch 111/150 - Train Loss: 0.2921, Train AUC: 0.9686, Val Loss: 0.2873, Val AUC: 0.9682, Time: 2.55s
+[2025-07-17 17:36:56] Epoch 112/150 - Train Loss: 0.2917, Train AUC: 0.9684, Val Loss: 0.2867, Val AUC: 0.9685, Time: 2.55s
+[2025-07-17 17:36:59] Epoch 113/150 - Train Loss: 0.2912, Train AUC: 0.9683, Val Loss: 0.2867, Val AUC: 0.9685, Time: 2.55s
+[2025-07-17 17:37:02] Epoch 114/150 - Train Loss: 0.2925, Train AUC: 0.9685, Val Loss: 0.2870, Val AUC: 0.9684, Time: 2.55s
+[2025-07-17 17:37:04] Epoch 115/150 - Train Loss: 0.2922, Train AUC: 0.9684, Val Loss: 0.2863, Val AUC: 0.9686, Time: 2.55s
+[2025-07-17 17:37:04] New best model saved with Val AUC: 0.9686
+[2025-07-17 17:37:07] Epoch 116/150 - Train Loss: 0.2913, Train AUC: 0.9686, Val Loss: 0.2865, Val AUC: 0.9687, Time: 2.54s
+[2025-07-17 17:37:07] New best model saved with Val AUC: 0.9687
+[2025-07-17 17:37:10] Epoch 117/150 - Train Loss: 0.2915, Train AUC: 0.9687, Val Loss: 0.2863, Val AUC: 0.9688, Time: 2.55s
+[2025-07-17 17:37:10] New best model saved with Val AUC: 0.9688
+[2025-07-17 17:37:12] Epoch 118/150 - Train Loss: 0.2918, Train AUC: 0.9684, Val Loss: 0.2859, Val AUC: 0.9689, Time: 2.55s
+[2025-07-17 17:37:12] New best model saved with Val AUC: 0.9689
+[2025-07-17 17:37:15] Epoch 119/150 - Train Loss: 0.2912, Train AUC: 0.9688, Val Loss: 0.2869, Val AUC: 0.9683, Time: 2.54s
+[2025-07-17 17:37:17] Epoch 120/150 - Train Loss: 0.2926, Train AUC: 0.9682, Val Loss: 0.2860, Val AUC: 0.9685, Time: 2.54s
+[2025-07-17 17:37:20] Epoch 121/150 - Train Loss: 0.2914, Train AUC: 0.9686, Val Loss: 0.2869, Val AUC: 0.9683, Time: 2.55s
+[2025-07-17 17:37:23] Epoch 122/150 - Train Loss: 0.2916, Train AUC: 0.9684, Val Loss: 0.2857, Val AUC: 0.9685, Time: 2.55s
+[2025-07-17 17:37:25] Epoch 123/150 - Train Loss: 0.2910, Train AUC: 0.9685, Val Loss: 0.2859, Val AUC: 0.9686, Time: 2.55s
+[2025-07-17 17:37:28] Epoch 124/150 - Train Loss: 0.2906, Train AUC: 0.9689, Val Loss: 0.2860, Val AUC: 0.9687, Time: 2.54s
+[2025-07-17 17:37:31] Epoch 125/150 - Train Loss: 0.2912, Train AUC: 0.9689, Val Loss: 0.2861, Val AUC: 0.9685, Time: 2.56s
+[2025-07-17 17:37:33] Epoch 126/150 - Train Loss: 0.2915, Train AUC: 0.9687, Val Loss: 0.2865, Val AUC: 0.9684, Time: 2.55s
+[2025-07-17 17:37:36] Epoch 127/150 - Train Loss: 0.2909, Train AUC: 0.9687, Val Loss: 0.2852, Val AUC: 0.9688, Time: 2.55s
+[2025-07-17 17:37:39] Epoch 128/150 - Train Loss: 0.2914, Train AUC: 0.9687, Val Loss: 0.2857, Val AUC: 0.9686, Time: 2.55s
+[2025-07-17 17:37:41] Epoch 129/150 - Train Loss: 0.2916, Train AUC: 0.9688, Val Loss: 0.2866, Val AUC: 0.9684, Time: 2.56s
+[2025-07-17 17:37:44] Epoch 130/150 - Train Loss: 0.2914, Train AUC: 0.9684, Val Loss: 0.2867, Val AUC: 0.9685, Time: 2.55s
+[2025-07-17 17:37:47] Epoch 131/150 - Train Loss: 0.2908, Train AUC: 0.9690, Val Loss: 0.2855, Val AUC: 0.9689, Time: 2.55s
+[2025-07-17 17:37:47] New best model saved with Val AUC: 0.9689
+[2025-07-17 17:37:49] Epoch 132/150 - Train Loss: 0.2911, Train AUC: 0.9690, Val Loss: 0.2856, Val AUC: 0.9689, Time: 2.55s
+[2025-07-17 17:37:49] New best model saved with Val AUC: 0.9689
+[2025-07-17 17:37:52] Epoch 133/150 - Train Loss: 0.2906, Train AUC: 0.9688, Val Loss: 0.2862, Val AUC: 0.9688, Time: 2.55s
+[2025-07-17 17:37:55] Epoch 134/150 - Train Loss: 0.2901, Train AUC: 0.9692, Val Loss: 0.2858, Val AUC: 0.9691, Time: 2.54s
+[2025-07-17 17:37:55] New best model saved with Val AUC: 0.9691
+[2025-07-17 17:37:57] Epoch 135/150 - Train Loss: 0.2903, Train AUC: 0.9687, Val Loss: 0.2855, Val AUC: 0.9689, Time: 2.54s
+[2025-07-17 17:38:00] Epoch 136/150 - Train Loss: 0.2908, Train AUC: 0.9690, Val Loss: 0.2860, Val AUC: 0.9685, Time: 2.55s
+[2025-07-17 17:38:03] Epoch 137/150 - Train Loss: 0.2908, Train AUC: 0.9686, Val Loss: 0.2868, Val AUC: 0.9684, Time: 2.55s
+[2025-07-17 17:38:05] Epoch 138/150 - Train Loss: 0.2912, Train AUC: 0.9688, Val Loss: 0.2858, Val AUC: 0.9688, Time: 2.55s
+[2025-07-17 17:38:08] Epoch 139/150 - Train Loss: 0.2909, Train AUC: 0.9689, Val Loss: 0.2854, Val AUC: 0.9689, Time: 2.55s
+[2025-07-17 17:38:10] Epoch 140/150 - Train Loss: 0.2910, Train AUC: 0.9687, Val Loss: 0.2859, Val AUC: 0.9688, Time: 2.55s
+[2025-07-17 17:38:13] Epoch 141/150 - Train Loss: 0.2908, Train AUC: 0.9688, Val Loss: 0.2850, Val AUC: 0.9691, Time: 2.55s
+[2025-07-17 17:38:16] Epoch 142/150 - Train Loss: 0.2897, Train AUC: 0.9687, Val Loss: 0.2858, Val AUC: 0.9688, Time: 2.55s
+[2025-07-17 17:38:18] Epoch 143/150 - Train Loss: 0.2906, Train AUC: 0.9687, Val Loss: 0.2860, Val AUC: 0.9686, Time: 2.55s
+[2025-07-17 17:38:21] Epoch 144/150 - Train Loss: 0.2906, Train AUC: 0.9690, Val Loss: 0.2860, Val AUC: 0.9688, Time: 2.56s
+[2025-07-17 17:38:24] Epoch 145/150 - Train Loss: 0.2903, Train AUC: 0.9687, Val Loss: 0.2859, Val AUC: 0.9686, Time: 2.56s
+[2025-07-17 17:38:26] Epoch 146/150 - Train Loss: 0.2911, Train AUC: 0.9687, Val Loss: 0.2852, Val AUC: 0.9691, Time: 2.55s
+[2025-07-17 17:38:29] Epoch 147/150 - Train Loss: 0.2906, Train AUC: 0.9688, Val Loss: 0.2857, Val AUC: 0.9689, Time: 2.54s
+[2025-07-17 17:38:32] Epoch 148/150 - Train Loss: 0.2905, Train AUC: 0.9689, Val Loss: 0.2856, Val AUC: 0.9690, Time: 2.56s
+[2025-07-17 17:38:34] Epoch 149/150 - Train Loss: 0.2909, Train AUC: 0.9688, Val Loss: 0.2864, Val AUC: 0.9687, Time: 2.54s
+[2025-07-17 17:38:37] Epoch 150/150 - Train Loss: 0.2907, Train AUC: 0.9692, Val Loss: 0.2860, Val AUC: 0.9689, Time: 2.55s
+[2025-07-17 17:38:37] Training completed. Evaluating on test set...
+[2025-07-17 17:38:38] Final Test Results - Loss: 0.2864, AUC: 0.9688, AP: 0.9874
+[2025-07-17 17:38:39] Training history plot saved to logs/gat_training_history_20250717_173838.png
+[2025-07-17 17:38:39] Training results saved to logs/gat_training_results_20250717_173838.json
+[2025-07-17 17:38:39] Training completed successfully!
+===== Training Completed =====
+Log saved to: /home/hice1/fyang365/scratch/Group-Project/logs/train_c4_20250717_173117.log
+---------------------------------------
+Begin Slurm Epilog: Jul-17-2025 17:38:40
+Job ID:        2700911
+User ID:       fyang365
+Account:       coc
+Job name:      gat_c4
+Resources:     cpu=8,gres/gpu:h100=1,mem=32G,node=1
+Rsrc Used:     cput=00:59:04,vmem=0,walltime=00:07:23,mem=1938904K,energy_used=0
+Partition:     ice-gpu
+QOS:           coc-ice
+Nodes:         atl1-1-03-013-13-0
+---------------------------------------

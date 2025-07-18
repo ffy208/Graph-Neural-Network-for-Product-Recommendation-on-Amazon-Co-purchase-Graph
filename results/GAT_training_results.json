@@ -1,0 +1,34 @@
+{
+  "best_val_auc": 0.9691177583280441,
+  "test_loss": 0.2864375412464142,
+  "test_auc": 0.9688370142983759,
+  "test_ap": 0.9873689627858385,
+  "epochs_trained": 150,
+  "model_config": {
+    "in_dim": 7,
+    "hidden_dim": 320,
+    "out_dim": 640,
+    "heads": 2,
+    "num_layers": 2
+  },
+  "training_args": {
+    "epochs": 150,
+    "lr": 0.005,
+    "weight_decay": 0.0003,
+    "patience": 20,
+    "hidden_dim": 320,
+    "out_dim": 640,
+    "heads": 2,
+    "num_layers": 2,
+    "dropout": 0.015,
+    "neg_ratio": 0.3,
+    "inductive": false,
+    "pos_weight": 2.0,
+    "use_focal": false,
+    "focal_gamma": 2.0,
+    "mix_alpha": 0.0,
+    "scheduler": "cosine",
+    "milestones": "80,120",
+    "lr_gamma": 0.1
+  }
+}
