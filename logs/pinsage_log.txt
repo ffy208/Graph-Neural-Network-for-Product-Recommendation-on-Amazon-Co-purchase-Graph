@@ -7,59 +7,87 @@ Generated 32866 negative edges
 ✅ Graph: 80539 nodes, 32866 edges
 ✅ Train edges: 1031582, Validation edges: 65732
 
+📂 Loading precomputed walk dictionaries (NPY format)...
+
+✅ Precomputed walk dicts loaded.
+
 🎲 Trial 1/1
-🔧 Config: {'batch_size': 512, 'num_epochs': 35, 'learning_rate': 0.0001, 'hidden_feats': 256, 'out_feats': 128, 'num_layers': 2, 'dropout': 0.25, 'train_ratio': 0.8}
-Use L2 regularization with weight decay 2e-5
+🔧 Config: {'batch_size': 512, 'num_epochs': 30, 'learning_rate': 0.0001, 'hidden_feats': 256, 'out_feats': 128, 'num_layers': 3, 'dropout': 0.25, 'train_ratio': 0.8}
 
 📦 Preparing dataloaders...
 
-✅ Epoch 1 | Loss: 0.5918 | AUC: 0.7940 | AP: 0.7860 | Val AUC: 0.9078 | Time: 64.46s | GPU: 6235.99 MB
-✅ Epoch 2 | Loss: 0.5332 | AUC: 0.8706 | AP: 0.8678 | Val AUC: 0.9389 | Time: 63.30s | GPU: 6239.62 MB
-✅ Epoch 3 | Loss: 0.5123 | AUC: 0.8931 | AP: 0.8938 | Val AUC: 0.9496 | Time: 63.20s | GPU: 6239.62 MB
-✅ Epoch 4 | Loss: 0.5003 | AUC: 0.9045 | AP: 0.9064 | Val AUC: 0.9573 | Time: 63.24s | GPU: 6239.62 MB
-✅ Epoch 5 | Loss: 0.4909 | AUC: 0.9130 | AP: 0.9155 | Val AUC: 0.9600 | Time: 62.96s | GPU: 6239.62 MB
-✅ Epoch 6 | Loss: 0.4833 | AUC: 0.9197 | AP: 0.9225 | Val AUC: 0.9641 | Time: 63.40s | GPU: 6239.62 MB
-✅ Epoch 7 | Loss: 0.4764 | AUC: 0.9254 | AP: 0.9288 | Val AUC: 0.9681 | Time: 63.04s | GPU: 6239.62 MB
-✅ Epoch 8 | Loss: 0.4704 | AUC: 0.9301 | AP: 0.9338 | Val AUC: 0.9692 | Time: 62.93s | GPU: 6239.62 MB
-✅ Epoch 9 | Loss: 0.4649 | AUC: 0.9342 | AP: 0.9382 | Val AUC: 0.9714 | Time: 63.30s | GPU: 6239.62 MB
-✅ Epoch 10 | Loss: 0.4600 | AUC: 0.9376 | AP: 0.9420 | Val AUC: 0.9712 | Time: 63.07s | GPU: 6239.62 MB
-✅ Epoch 11 | Loss: 0.4553 | AUC: 0.9410 | AP: 0.9454 | Val AUC: 0.9732 | Time: 63.03s | GPU: 6239.62 MB
-✅ Epoch 12 | Loss: 0.4509 | AUC: 0.9437 | AP: 0.9482 | Val AUC: 0.9750 | Time: 63.19s | GPU: 6239.62 MB
-✅ Epoch 13 | Loss: 0.4467 | AUC: 0.9462 | AP: 0.9509 | Val AUC: 0.9757 | Time: 63.22s | GPU: 6239.62 MB
-✅ Epoch 14 | Loss: 0.4427 | AUC: 0.9485 | AP: 0.9533 | Val AUC: 0.9757 | Time: 63.07s | GPU: 6240.13 MB
-✅ Epoch 15 | Loss: 0.4389 | AUC: 0.9505 | AP: 0.9554 | Val AUC: 0.9756 | Time: 64.36s | GPU: 6240.13 MB
-✅ Epoch 16 | Loss: 0.4352 | AUC: 0.9525 | AP: 0.9573 | Val AUC: 0.9768 | Time: 64.53s | GPU: 6240.13 MB
-✅ Epoch 17 | Loss: 0.4314 | AUC: 0.9543 | AP: 0.9591 | Val AUC: 0.9781 | Time: 64.23s | GPU: 6240.13 MB
-✅ Epoch 18 | Loss: 0.4280 | AUC: 0.9559 | AP: 0.9607 | Val AUC: 0.9762 | Time: 64.23s | GPU: 6240.13 MB
-✅ Epoch 19 | Loss: 0.4245 | AUC: 0.9573 | AP: 0.9623 | Val AUC: 0.9780 | Time: 64.38s | GPU: 6240.13 MB
-✅ Epoch 20 | Loss: 0.4211 | AUC: 0.9587 | AP: 0.9637 | Val AUC: 0.9780 | Time: 64.50s | GPU: 6240.13 MB
-✅ Epoch 21 | Loss: 0.4179 | AUC: 0.9599 | AP: 0.9649 | Val AUC: 0.9783 | Time: 64.33s | GPU: 6240.13 MB
-✅ Epoch 22 | Loss: 0.4143 | AUC: 0.9612 | AP: 0.9662 | Val AUC: 0.9785 | Time: 64.21s | GPU: 6240.13 MB
-✅ Epoch 23 | Loss: 0.4109 | AUC: 0.9625 | AP: 0.9674 | Val AUC: 0.9778 | Time: 64.46s | GPU: 6240.13 MB
-✅ Epoch 24 | Loss: 0.4075 | AUC: 0.9636 | AP: 0.9684 | Val AUC: 0.9791 | Time: 64.07s | GPU: 6240.13 MB
-✅ Epoch 25 | Loss: 0.4043 | AUC: 0.9646 | AP: 0.9694 | Val AUC: 0.9778 | Time: 63.73s | GPU: 6240.13 MB
-✅ Epoch 26 | Loss: 0.4011 | AUC: 0.9656 | AP: 0.9704 | Val AUC: 0.9775 | Time: 63.87s | GPU: 6240.13 MB
-✅ Epoch 27 | Loss: 0.3977 | AUC: 0.9665 | AP: 0.9713 | Val AUC: 0.9772 | Time: 63.66s | GPU: 6240.13 MB
-✅ Epoch 28 | Loss: 0.3944 | AUC: 0.9674 | AP: 0.9721 | Val AUC: 0.9773 | Time: 63.64s | GPU: 6240.13 MB
-✅ Epoch 29 | Loss: 0.3912 | AUC: 0.9682 | AP: 0.9729 | Val AUC: 0.9770 | Time: 63.83s | GPU: 6240.13 MB
-✅ Epoch 30 | Loss: 0.3881 | AUC: 0.9690 | AP: 0.9736 | Val AUC: 0.9767 | Time: 63.80s | GPU: 6240.13 MB
-✅ Epoch 31 | Loss: 0.3846 | AUC: 0.9699 | AP: 0.9744 | Val AUC: 0.9753 | Time: 63.97s | GPU: 6240.13 MB
-✅ Epoch 32 | Loss: 0.3815 | AUC: 0.9706 | AP: 0.9751 | Val AUC: 0.9758 | Time: 64.14s | GPU: 6240.39 MB
-✅ Epoch 33 | Loss: 0.3783 | AUC: 0.9713 | AP: 0.9757 | Val AUC: 0.9752 | Time: 63.48s | GPU: 6240.39 MB
-✅ Epoch 34 | Loss: 0.3751 | AUC: 0.9721 | AP: 0.9764 | Val AUC: 0.9755 | Time: 63.53s | GPU: 6240.39 MB
-✅ Epoch 35 | Loss: 0.3723 | AUC: 0.9726 | AP: 0.9769 | Val AUC: 0.9754 | Time: 63.71s | GPU: 6240.39 MB
-🎯 Best epoch in trial 1: Epoch 24 with Val AUC: 0.9791
+✅ Epoch 1 | Loss: 0.6105 | AUC: 0.7593 | AP: 0.7579 | Val Loss: 0.5423 |Val AUC: 0.8708 | Val AP: 0.8739 |Time: 1869.74s | GPU: 6415.58 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_1.pth
+✅ Epoch 2 | Loss: 0.5457 | AUC: 0.8470 | AP: 0.8496 | Val Loss: 0.5037 |Val AUC: 0.9100 | Val AP: 0.9140 |Time: 1873.14s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_2.pth
+✅ Epoch 3 | Loss: 0.5256 | AUC: 0.8693 | AP: 0.8759 | Val Loss: 0.4837 |Val AUC: 0.9243 | Val AP: 0.9293 |Time: 1881.76s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_3.pth
+✅ Epoch 4 | Loss: 0.5133 | AUC: 0.8812 | AP: 0.8901 | Val Loss: 0.4759 |Val AUC: 0.9299 | Val AP: 0.9362 |Time: 1890.69s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_4.pth
+✅ Epoch 5 | Loss: 0.5051 | AUC: 0.8882 | AP: 0.8990 | Val Loss: 0.4659 |Val AUC: 0.9360 | Val AP: 0.9428 |Time: 1888.84s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_5.pth
+✅ Epoch 6 | Loss: 0.4990 | AUC: 0.8932 | AP: 0.9050 | Val Loss: 0.4590 |Val AUC: 0.9387 | Val AP: 0.9466 |Time: 1897.17s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_6.pth
+✅ Epoch 7 | Loss: 0.4940 | AUC: 0.8974 | AP: 0.9100 | Val Loss: 0.4557 |Val AUC: 0.9402 | Val AP: 0.9480 |Time: 1890.37s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_7.pth
+✅ Epoch 8 | Loss: 0.4897 | AUC: 0.9010 | AP: 0.9139 | Val Loss: 0.4523 |Val AUC: 0.9437 | Val AP: 0.9520 |Time: 1892.21s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_8.pth
+✅ Epoch 9 | Loss: 0.4861 | AUC: 0.9040 | AP: 0.9174 | Val Loss: 0.4510 |Val AUC: 0.9449 | Val AP: 0.9535 |Time: 1894.92s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_9.pth
+✅ Epoch 10 | Loss: 0.4824 | AUC: 0.9068 | AP: 0.9204 | Val Loss: 0.4486 |Val AUC: 0.9467 | Val AP: 0.9542 |Time: 1890.67s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_10.pth
+✅ Epoch 11 | Loss: 0.4794 | AUC: 0.9092 | AP: 0.9228 | Val Loss: 0.4469 |Val AUC: 0.9456 | Val AP: 0.9544 |Time: 1891.78s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_11.pth
+✅ Epoch 12 | Loss: 0.4768 | AUC: 0.9114 | AP: 0.9250 | Val Loss: 0.4469 |Val AUC: 0.9472 | Val AP: 0.9557 |Time: 1886.02s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_12.pth
+✅ Epoch 13 | Loss: 0.4742 | AUC: 0.9134 | AP: 0.9271 | Val Loss: 0.4436 |Val AUC: 0.9483 | Val AP: 0.9574 |Time: 1888.85s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_13.pth
+✅ Epoch 14 | Loss: 0.4715 | AUC: 0.9152 | AP: 0.9290 | Val Loss: 0.4440 |Val AUC: 0.9495 | Val AP: 0.9586 |Time: 1884.70s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_14.pth
+✅ Epoch 15 | Loss: 0.4694 | AUC: 0.9170 | AP: 0.9308 | Val Loss: 0.4394 |Val AUC: 0.9518 | Val AP: 0.9602 |Time: 1887.72s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_15.pth
+✅ Epoch 16 | Loss: 0.4674 | AUC: 0.9183 | AP: 0.9322 | Val Loss: 0.4398 |Val AUC: 0.9521 | Val AP: 0.9606 |Time: 1880.31s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_16.pth
+✅ Epoch 17 | Loss: 0.4647 | AUC: 0.9200 | AP: 0.9340 | Val Loss: 0.4380 |Val AUC: 0.9524 | Val AP: 0.9607 |Time: 1879.05s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_17.pth
+✅ Epoch 18 | Loss: 0.4627 | AUC: 0.9216 | AP: 0.9354 | Val Loss: 0.4369 |Val AUC: 0.9526 | Val AP: 0.9611 |Time: 1880.44s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_18.pth
+✅ Epoch 19 | Loss: 0.4607 | AUC: 0.9228 | AP: 0.9367 | Val Loss: 0.4356 |Val AUC: 0.9540 | Val AP: 0.9627 |Time: 1882.85s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_19.pth
+✅ Epoch 20 | Loss: 0.4588 | AUC: 0.9240 | AP: 0.9379 | Val Loss: 0.4352 |Val AUC: 0.9533 | Val AP: 0.9623 |Time: 1878.80s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_20.pth
+✅ Epoch 21 | Loss: 0.4568 | AUC: 0.9253 | AP: 0.9391 | Val Loss: 0.4343 |Val AUC: 0.9547 | Val AP: 0.9633 |Time: 1883.24s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_21.pth
+✅ Epoch 22 | Loss: 0.4548 | AUC: 0.9265 | AP: 0.9403 | Val Loss: 0.4322 |Val AUC: 0.9551 | Val AP: 0.9640 |Time: 1872.30s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_22.pth
+✅ Epoch 23 | Loss: 0.4531 | AUC: 0.9276 | AP: 0.9413 | Val Loss: 0.4322 |Val AUC: 0.9550 | Val AP: 0.9643 |Time: 1876.38s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_23.pth
+✅ Epoch 24 | Loss: 0.4511 | AUC: 0.9286 | AP: 0.9424 | Val Loss: 0.4323 |Val AUC: 0.9551 | Val AP: 0.9640 |Time: 1879.05s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_24.pth
+✅ Epoch 25 | Loss: 0.4493 | AUC: 0.9298 | AP: 0.9434 | Val Loss: 0.4306 |Val AUC: 0.9562 | Val AP: 0.9649 |Time: 1881.44s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_25.pth
+✅ Epoch 26 | Loss: 0.4475 | AUC: 0.9308 | AP: 0.9443 | Val Loss: 0.4328 |Val AUC: 0.9551 | Val AP: 0.9641 |Time: 1874.45s | GPU: 6417.26 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_26.pth
+✅ Epoch 27 | Loss: 0.4462 | AUC: 0.9315 | AP: 0.9450 | Val Loss: 0.4321 |Val AUC: 0.9544 | Val AP: 0.9639 |Time: 1887.71s | GPU: 6418.39 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_27.pth
+✅ Epoch 28 | Loss: 0.4446 | AUC: 0.9323 | AP: 0.9457 | Val Loss: 0.4319 |Val AUC: 0.9556 | Val AP: 0.9646 |Time: 1873.64s | GPU: 6418.39 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_28.pth
+✅ Epoch 29 | Loss: 0.4428 | AUC: 0.9330 | AP: 0.9466 | Val Loss: 0.4313 |Val AUC: 0.9560 | Val AP: 0.9654 |Time: 1879.90s | GPU: 6420.33 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_29.pth
+✅ Epoch 30 | Loss: 0.4412 | AUC: 0.9339 | AP: 0.9473 | Val Loss: 0.4320 |Val AUC: 0.9544 | Val AP: 0.9642 |Time: 1884.19s | GPU: 6420.33 MB
+💾 Checkpoint saved to /content/drive/MyDrive/Colab Notebooks/Group-Project/checkpoints/epoch_30.pth
+🎯 Best epoch in trial 1: Epoch 25 with Val AUC: 0.9562
 
 🏆 Best Config Across All Trials:
   batch_size: 512
-  num_epochs: 35
+  num_epochs: 30
   learning_rate: 0.0001
   hidden_feats: 256
   out_feats: 128
-  num_layers: 2
+  num_layers: 3
   dropout: 0.25
   train_ratio: 0.8
-🥇 Best Validation AUC: 0.9791
+🥇 Best Validation AUC: 0.9562
 
 📮 Best model saved to: /content/drive/MyDrive/Colab Notebooks/Group-Project/model/best_pinsage_model.pth
 📈 Saved training history plot to: /content/drive/MyDrive/Colab Notebooks/Group-Project/plot/training_history.png

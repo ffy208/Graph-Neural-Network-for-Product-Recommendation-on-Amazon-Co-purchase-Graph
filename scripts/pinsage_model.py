@@ -25,7 +25,7 @@ class DenseGraphSAGE(nn.Module):
 
 
 class PinSAGEModel(nn.Module):
-    def __init__(self, in_feats, hidden_feats, out_feats, num_layers=2, dropout=0.2):
+    def __init__(self, in_feats, hidden_feats, out_feats, num_layers=3, dropout=0.2):
         super().__init__()
         self.layers = nn.ModuleList()
         for i in range(num_layers):
@@ -45,7 +45,7 @@ class DotProductPredictor(nn.Module):
 
 
 class LinkPredictionModel(nn.Module):
-    def __init__(self, in_feats, hidden_feats, out_feats, num_layers=2, dropout=0.2):
+    def __init__(self, in_feats, hidden_feats, out_feats, num_layers=3, dropout=0.2):
         super().__init__()
         self.encoder = PinSAGEModel(in_feats, hidden_feats, out_feats, num_layers, dropout)
         self.decoder = DotProductPredictor()

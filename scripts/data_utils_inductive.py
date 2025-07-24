@@ -166,26 +166,6 @@ def build_inductive_split(edge_csv_path, feature_npy_path, test_ratio=0.2, neg_r
     final_train_edges = [(global_to_local[u], global_to_local[v]) for u, v in final_train_edges]  
     final_train_labels = train_pos_labels + train_neg_labels
 
-    # # Combine and filter final training edges to ensure all nodes exist in train_graph
-    # final_train_edges_raw = train_pos_edges + train_neg_edges
-    # final_train_labels_raw = train_pos_labels + train_neg_labels
-
-    # train_node_set = set(train_nids.tolist())
-    # final_train_edges = []
-    # final_train_labels = []
-
-    # for (u, v), label in zip(final_train_edges_raw, final_train_labels_raw):
-    #     if u in train_node_set and v in train_node_set:
-    #         final_train_edges.append((u, v))
-    #         final_train_labels.append(label)
-
-    # print(f"🧹 Filtered training edges: kept {len(final_train_edges)} / {len(final_train_edges_raw)}", flush=True)
-
-    # train_feat_pairs = torch.stack([
-    #     torch.cat([features[u], features[v]]) for u, v in final_train_edges
-    # ])
-    # print(f"Train feature pairs shape: {train_feat_pairs.shape}", flush=True)
-
     val_g = dgl.node_subgraph(full_graph, test_nids).to(features.device)
     # Create global-to-local node ID mapping after subgraph
     global_to_local_v = {nid.item(): i for i, nid in enumerate(test_nids)}
@@ -204,24 +184,6 @@ def build_inductive_split(edge_csv_path, feature_npy_path, test_ratio=0.2, neg_r
     val_edges = test_pos_edges + test_neg_edges
     val_edges = [(global_to_local_v[u], global_to_local_v[v]) for u, v in val_edges]
     val_labels = test_pos_labels + test_neg_labels
-
-    # val_edges_raw = test_pos_edges + test_neg_edges
-    # val_labels_raw = test_pos_labels + test_neg_labels
-
-    # # Filter: keep only edges where both u and v are in train_nid_set (since we sample from train_graph)
-    # val_edges = []
-    # val_labels = []
-    # for (u, v), label in zip(val_edges_raw, val_labels_raw):
-    #     if u in test_nid_set and v in test_nid_set:
-    #         val_edges.append((u, v))
-    #         val_labels.append(label)
-
-    # print(f"🧪 Filtered validation edges: kept {len(val_edges)} / {len(val_edges_raw)}", flush=True)
-
-    # val_feat_pairs = torch.stack([
-    #     torch.cat([features[u], features[v]]) for u, v in val_edges
-    # ])
-    # print(f"Validation feature pairs shape: {val_feat_pairs.shape}", flush=True)
 
     # print("=== Inductive Split Complete ===", flush=True)
 

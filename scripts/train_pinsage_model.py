@@ -11,9 +11,10 @@ from data_utils_inductive import build_inductive_split
 import dgl
 import random
 import matplotlib
-matplotlib.use("Agg") 
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import sys
+import numpy as np
 
 # Redirect stdout to both console and log file
 class Logger(object):
@@ -30,7 +31,8 @@ class Logger(object):
         self.log.flush()
 
 # Setup logging
-LOG_DIR = "/content/drive/MyDrive/Colab Notebooks/Group-Project/logs"
+GOOGLE_DRIVE_PATH = "/content/drive/MyDrive/Colab Notebooks/Group-Project"
+LOG_DIR = os.path.join(GOOGLE_DRIVE_PATH, "logs")
 os.makedirs(LOG_DIR, exist_ok=True)
 log_file = os.path.join(LOG_DIR, "train_log.txt")
 sys.stdout = Logger(log_file)
@@ -81,10 +83,14 @@ def plot_training_history(train_loss_list, train_auc_list, val_loss_list, val_au
 def train():
     os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    data_path = "/content/drive/MyDrive/Colab Notebooks/Group-Project/data"
-    GOOGLE_DRIVE_PATH = "/content/drive/MyDrive/Colab Notebooks/Group-Project"
+    data_path = os.path.join(GOOGLE_DRIVE_PATH, "data")
     MODEL_SAVE_PATH = os.path.join(GOOGLE_DRIVE_PATH, "model")
     PLOT_SAVE_PATH = os.path.join(GOOGLE_DRIVE_PATH, "plot")
+    CHECKPOINT_DIR = os.path.join(GOOGLE_DRIVE_PATH, "checkpoints")
+    os.makedirs(MODEL_SAVE_PATH, exist_ok=True)
+    os.makedirs(CHECKPOINT_DIR, exist_ok=True)
+    os.makedirs(PLOT_SAVE_PATH, exist_ok=True)
+
     train_ratio = 0.8
     neg_ratio = 1
 
@@ -100,14 +106,19 @@ def train():
     print(f"✅ Graph: {val_g.num_nodes()} nodes, {val_g.num_edges()} edges")
     print(f"✅ Train edges: {len(train_edges)}, Validation edges: {len(val_edges)}")
 
+    print("\n📂 Loading precomputed walk dictionaries (NPY format)...\n")
+    train_precomp = np.load(os.path.join(data_path, "train_neighbors_precomputed.npy"), allow_pickle=True).item()
+    val_precomp = np.load(os.path.join(data_path, "val_neighbors_precomputed.npy"), allow_pickle=True).item()
+    print("✅ Precomputed walk dicts loaded.")
+
     param_grid = {
-        "batch_size": [512], #[256, 512, 1024]
-        "num_epochs": [35],
-        "learning_rate": [1e-4], #[5e-4, 1e-3, 2e-3]
-        "hidden_feats": [384], #[64, 128, 256]
-        "out_feats": [128], #[64, 128]
-        "num_layers": [2],
-        "dropout": [0.3] #[0.05, 0.1, 0.2]
+        "batch_size": [512],
+        "num_epochs": [30],
+        "learning_rate": [1e-4],
+        "hidden_feats": [256],
+        "out_feats": [128],
+        "num_layers": [3],  # ensure 3-layer compatibility
+        "dropout": [0.25]
     }
 
     trials = 1
@@ -147,7 +158,11 @@ def train():
             features=features,
             train_graph=train_g,
             val_graph=val_g,
+            train_precomp=train_precomp,
+            val_precomp=val_precomp,
             batch_size=batch_size,
+            num_neighbors=8,
+            num_layers=num_layers,
             device=device
         )
 
@@ -164,8 +179,17 @@ def train():
         best_trial_epoch = -1
         best_trial_state = None
 
+        start_epoch = 0
+        resume_from = None  # e.g., "/content/drive/MyDrive/.../checkpoints/epoch_20.pth"
+        if resume_from and os.path.exists(resume_from):
+            checkpoint = torch.load(resume_from)
+            model.load_state_dict(checkpoint['model_state_dict'])
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            start_epoch = checkpoint['epoch']
+            print(f"🔁 Resumed training from checkpoint at epoch {start_epoch}")
+
         model.train()
-        for epoch in range(num_epochs):
+        for epoch in range(start_epoch, num_epochs):
             total_loss = 0
             all_preds = []
             all_labels = []
@@ -178,7 +202,6 @@ def train():
                 loss = loss_fn(preds, labels)
                 loss.backward()
                 optimizer.step()
-
                 total_loss += loss.item() * len(labels)
                 all_preds.append(preds.detach().cpu())
                 all_labels.append(labels.detach().cpu())
@@ -223,7 +246,22 @@ def train():
             duration = time.time() - start_time
             gpu_mb = torch.cuda.max_memory_allocated(device) / (1024 ** 2) if torch.cuda.is_available() else 0
 
-            print(f"✅ Epoch {epoch + 1} | Loss: {avg_loss:.4f} | AUC: {train_auc:.4f} | AP: {train_ap:.4f} | Val AUC: {val_auc:.4f} | Time: {duration:.2f}s | GPU: {gpu_mb:.2f} MB")
+            print(f"✅ Epoch {epoch + 1} | Loss: {avg_loss:.4f} | AUC: {train_auc:.4f} | AP: {train_ap:.4f} | Val Loss: {val_loss:.4f} |Val AUC: {val_auc:.4f} | Val AP: {val_ap:.4f} |Time: {duration:.2f}s | GPU: {gpu_mb:.2f} MB")
+
+            # Save checkpoint with AP values
+            checkpoint_path = os.path.join(CHECKPOINT_DIR, f"epoch_{epoch + 1}.pth")
+            torch.save({
+                'epoch': epoch + 1,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'train_loss': avg_loss,
+                'train_auc': train_auc,
+                'train_ap': train_ap,
+                'val_loss': val_loss,
+                'val_auc': val_auc,
+                'val_ap': val_ap
+            }, checkpoint_path)
+            print(f"💾 Checkpoint saved to {checkpoint_path}")
 
             if val_auc > best_trial_auc:
                 best_trial_auc = val_auc
@@ -242,7 +280,6 @@ def train():
         print(f"  {k}: {v}")
     print(f"🥇 Best Validation AUC: {best_auc:.4f}")
 
-    os.makedirs(MODEL_SAVE_PATH, exist_ok=True)
     model_file = os.path.join(MODEL_SAVE_PATH, 'best_pinsage_model.pth')
     torch.save(best_state, model_file)
     print(f"\n📮 Best model saved to: {model_file}")
