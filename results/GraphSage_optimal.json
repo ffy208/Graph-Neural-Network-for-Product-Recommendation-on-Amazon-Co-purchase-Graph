@@ -1,0 +1,13 @@
+{
+  "hidden_channels": 32,
+  "num_layers": 2,
+  "dropout": 0.3,
+  "lr": 0.001,
+  "batch_size": 1024,
+  "num_neighbors": [
+    15,
+    10
+  ],
+  "in_channels": 465,
+  "out_channels": 1
+}
