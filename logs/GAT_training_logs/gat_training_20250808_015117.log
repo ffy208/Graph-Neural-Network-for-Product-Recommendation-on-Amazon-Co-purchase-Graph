@@ -1,0 +1,347 @@
+[2025-08-08 01:51:18] Starting GAT training based on GraphSage.ipynb pipeline
+[2025-08-08 01:51:18] Log file: logs/gat_training_20250808_015117.log
+[2025-08-08 01:51:18] Arguments: Namespace(epochs=150, lr=0.005, weight_decay=0.0001, patience=20, hidden_dim=256, out_dim=512, heads=2, num_layers=2, dropout=0.05, neg_ratio=0.3, inductive=True, pos_weight=2.5, use_focal=False, focal_gamma=2.0, mix_alpha=0.1, scheduler='multistep', milestones='80,120', lr_gamma=0.1)
+[2025-08-08 01:51:18] Using device: cuda
+[2025-08-08 01:51:18] Loading data from data/items_cleaned.csv...
+[2025-08-08 01:51:19] Loaded 402691 items
+[2025-08-08 01:51:19] Created mapping for 402691 unique ASINs
+[2025-08-08 01:51:19] Processing features...
+[2025-08-08 01:51:19] Processed 7 features
+[2025-08-08 01:51:19] Building graph from similarity relationships...
+[2025-08-08 01:51:37] Graph built: 402691 nodes, 808185 edges
+\\textbf{Model} & \\textbf{GPU} & \\multicolumn{3}{c}{\\textbf{Training}} & \\multicolumn{3}{c}{\\textbf{Validation}} & \\textbf{Epoch Time (s)} \\\\
+  &  & AUC & AP & Loss & AUC & AP & Loss & \\\\
+[2025-08-08 01:52:10] Starting training for 150 epochs...
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8321 & 0.9631 & 0.2309 & 0.8342 & 0.9285 & 0.4414 & 2.76 \\
+[2025-08-08 01:52:12] Epoch   1/150 - Train Loss: 0.2309, Train AUC: 0.8321, Val Loss: 0.4414, Val AUC: 0.8342, Time: 2.76s
+[2025-08-08 01:52:13] New best model saved with Val AUC: 0.8342
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8713 & 0.9730 & 0.2363 & 0.8658 & 0.9420 & 0.2957 & 2.25 \\
+[2025-08-08 01:52:15] Epoch   2/150 - Train Loss: 0.2363, Train AUC: 0.8713, Val Loss: 0.2957, Val AUC: 0.8658, Time: 2.25s
+[2025-08-08 01:52:15] New best model saved with Val AUC: 0.8658
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8825 & 0.9754 & 0.1569 & 0.8703 & 0.9424 & 0.2972 & 2.25 \\
+[2025-08-08 01:52:18] Epoch   3/150 - Train Loss: 0.1569, Train AUC: 0.8825, Val Loss: 0.2972, Val AUC: 0.8703, Time: 2.25s
+[2025-08-08 01:52:18] New best model saved with Val AUC: 0.8703
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8810 & 0.9748 & 0.1464 & 0.8696 & 0.9415 & 0.2863 & 2.26 \\
+[2025-08-08 01:52:20] Epoch   4/150 - Train Loss: 0.1464, Train AUC: 0.8810, Val Loss: 0.2863, Val AUC: 0.8696, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8829 & 0.9751 & 0.1428 & 0.8690 & 0.9423 & 0.2498 & 2.25 \\
+[2025-08-08 01:52:23] Epoch   5/150 - Train Loss: 0.1428, Train AUC: 0.8829, Val Loss: 0.2498, Val AUC: 0.8690, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8881 & 0.9765 & 0.1385 & 0.8747 & 0.9439 & 0.2294 & 2.26 \\
+[2025-08-08 01:52:26] Epoch   6/150 - Train Loss: 0.1385, Train AUC: 0.8881, Val Loss: 0.2294, Val AUC: 0.8747, Time: 2.26s
+[2025-08-08 01:52:26] New best model saved with Val AUC: 0.8747
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8902 & 0.9773 & 0.1339 & 0.8773 & 0.9460 & 0.2248 & 2.28 \\
+[2025-08-08 01:52:28] Epoch   7/150 - Train Loss: 0.1339, Train AUC: 0.8902, Val Loss: 0.2248, Val AUC: 0.8773, Time: 2.28s
+[2025-08-08 01:52:29] New best model saved with Val AUC: 0.8773
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8919 & 0.9775 & 0.1323 & 0.8816 & 0.9472 & 0.2165 & 2.27 \\
+[2025-08-08 01:52:31] Epoch   8/150 - Train Loss: 0.1323, Train AUC: 0.8919, Val Loss: 0.2165, Val AUC: 0.8816, Time: 2.27s
+[2025-08-08 01:52:31] New best model saved with Val AUC: 0.8816
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8954 & 0.9780 & 0.1312 & 0.8836 & 0.9489 & 0.2052 & 2.27 \\
+[2025-08-08 01:52:34] Epoch   9/150 - Train Loss: 0.1312, Train AUC: 0.8954, Val Loss: 0.2052, Val AUC: 0.8836, Time: 2.27s
+[2025-08-08 01:52:34] New best model saved with Val AUC: 0.8836
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.8973 & 0.9783 & 0.1286 & 0.8875 & 0.9507 & 0.2036 & 2.27 \\
+[2025-08-08 01:52:36] Epoch  10/150 - Train Loss: 0.1286, Train AUC: 0.8973, Val Loss: 0.2036, Val AUC: 0.8875, Time: 2.27s
+[2025-08-08 01:52:37] New best model saved with Val AUC: 0.8875
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9000 & 0.9790 & 0.1276 & 0.8904 & 0.9510 & 0.2113 & 2.27 \\
+[2025-08-08 01:52:39] Epoch  11/150 - Train Loss: 0.1276, Train AUC: 0.9000, Val Loss: 0.2113, Val AUC: 0.8904, Time: 2.27s
+[2025-08-08 01:52:39] New best model saved with Val AUC: 0.8904
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9048 & 0.9802 & 0.1274 & 0.8955 & 0.9540 & 0.2025 & 2.27 \\
+[2025-08-08 01:52:42] Epoch  12/150 - Train Loss: 0.1274, Train AUC: 0.9048, Val Loss: 0.2025, Val AUC: 0.8955, Time: 2.27s
+[2025-08-08 01:52:42] New best model saved with Val AUC: 0.8955
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9075 & 0.9809 & 0.1254 & 0.8981 & 0.9539 & 0.1967 & 2.25 \\
+[2025-08-08 01:52:44] Epoch  13/150 - Train Loss: 0.1254, Train AUC: 0.9075, Val Loss: 0.1967, Val AUC: 0.8981, Time: 2.25s
+[2025-08-08 01:52:45] New best model saved with Val AUC: 0.8981
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9126 & 0.9821 & 0.1232 & 0.8977 & 0.9538 & 0.1932 & 2.27 \\
+[2025-08-08 01:52:47] Epoch  14/150 - Train Loss: 0.1232, Train AUC: 0.9126, Val Loss: 0.1932, Val AUC: 0.8977, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9155 & 0.9826 & 0.1207 & 0.8973 & 0.9547 & 0.1907 & 2.29 \\
+[2025-08-08 01:52:50] Epoch  15/150 - Train Loss: 0.1207, Train AUC: 0.9155, Val Loss: 0.1907, Val AUC: 0.8973, Time: 2.29s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9180 & 0.9831 & 0.1195 & 0.8982 & 0.9547 & 0.1935 & 2.27 \\
+[2025-08-08 01:52:52] Epoch  16/150 - Train Loss: 0.1195, Train AUC: 0.9180, Val Loss: 0.1935, Val AUC: 0.8982, Time: 2.27s
+[2025-08-08 01:52:53] New best model saved with Val AUC: 0.8982
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9188 & 0.9832 & 0.1190 & 0.8940 & 0.9527 & 0.2012 & 2.25 \\
+[2025-08-08 01:52:55] Epoch  17/150 - Train Loss: 0.1190, Train AUC: 0.9188, Val Loss: 0.2012, Val AUC: 0.8940, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9213 & 0.9838 & 0.1171 & 0.8980 & 0.9544 & 0.1989 & 2.27 \\
+[2025-08-08 01:52:58] Epoch  18/150 - Train Loss: 0.1171, Train AUC: 0.9213, Val Loss: 0.1989, Val AUC: 0.8980, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9241 & 0.9844 & 0.1165 & 0.9100 & 0.9595 & 0.1851 & 2.28 \\
+[2025-08-08 01:53:00] Epoch  19/150 - Train Loss: 0.1165, Train AUC: 0.9241, Val Loss: 0.1851, Val AUC: 0.9100, Time: 2.28s
+[2025-08-08 01:53:01] New best model saved with Val AUC: 0.9100
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9285 & 0.9853 & 0.1141 & 0.9134 & 0.9619 & 0.1802 & 2.26 \\
+[2025-08-08 01:53:03] Epoch  20/150 - Train Loss: 0.1141, Train AUC: 0.9285, Val Loss: 0.1802, Val AUC: 0.9134, Time: 2.26s
+[2025-08-08 01:53:03] New best model saved with Val AUC: 0.9134
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9299 & 0.9856 & 0.1133 & 0.9100 & 0.9595 & 0.1874 & 2.25 \\
+[2025-08-08 01:53:05] Epoch  21/150 - Train Loss: 0.1133, Train AUC: 0.9299, Val Loss: 0.1874, Val AUC: 0.9100, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9311 & 0.9856 & 0.1121 & 0.9133 & 0.9614 & 0.1838 & 2.25 \\
+[2025-08-08 01:53:08] Epoch  22/150 - Train Loss: 0.1121, Train AUC: 0.9311, Val Loss: 0.1838, Val AUC: 0.9133, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9317 & 0.9857 & 0.1100 & 0.9139 & 0.9612 & 0.1838 & 2.25 \\
+[2025-08-08 01:53:11] Epoch  23/150 - Train Loss: 0.1100, Train AUC: 0.9317, Val Loss: 0.1838, Val AUC: 0.9139, Time: 2.25s
+[2025-08-08 01:53:11] New best model saved with Val AUC: 0.9139
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9357 & 0.9868 & 0.1095 & 0.9150 & 0.9623 & 0.1777 & 2.26 \\
+[2025-08-08 01:53:13] Epoch  24/150 - Train Loss: 0.1095, Train AUC: 0.9357, Val Loss: 0.1777, Val AUC: 0.9150, Time: 2.26s
+[2025-08-08 01:53:14] New best model saved with Val AUC: 0.9150
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9396 & 0.9876 & 0.1076 & 0.9219 & 0.9652 & 0.1719 & 2.26 \\
+[2025-08-08 01:53:16] Epoch  25/150 - Train Loss: 0.1076, Train AUC: 0.9396, Val Loss: 0.1719, Val AUC: 0.9219, Time: 2.26s
+[2025-08-08 01:53:16] New best model saved with Val AUC: 0.9219
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9429 & 0.9882 & 0.1067 & 0.9206 & 0.9645 & 0.1751 & 2.27 \\
+[2025-08-08 01:53:19] Epoch  26/150 - Train Loss: 0.1067, Train AUC: 0.9429, Val Loss: 0.1751, Val AUC: 0.9206, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9441 & 0.9884 & 0.1052 & 0.9244 & 0.9650 & 0.1763 & 2.28 \\
+[2025-08-08 01:53:21] Epoch  27/150 - Train Loss: 0.1052, Train AUC: 0.9441, Val Loss: 0.1763, Val AUC: 0.9244, Time: 2.28s
+[2025-08-08 01:53:22] New best model saved with Val AUC: 0.9244
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9440 & 0.9884 & 0.1036 & 0.9257 & 0.9662 & 0.1772 & 2.24 \\
+[2025-08-08 01:53:24] Epoch  28/150 - Train Loss: 0.1036, Train AUC: 0.9440, Val Loss: 0.1772, Val AUC: 0.9257, Time: 2.24s
+[2025-08-08 01:53:24] New best model saved with Val AUC: 0.9257
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9472 & 0.9890 & 0.1038 & 0.9281 & 0.9677 & 0.1740 & 2.27 \\
+[2025-08-08 01:53:27] Epoch  29/150 - Train Loss: 0.1038, Train AUC: 0.9472, Val Loss: 0.1740, Val AUC: 0.9281, Time: 2.27s
+[2025-08-08 01:53:27] New best model saved with Val AUC: 0.9281
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9506 & 0.9899 & 0.1009 & 0.9362 & 0.9718 & 0.1637 & 2.28 \\
+[2025-08-08 01:53:29] Epoch  30/150 - Train Loss: 0.1009, Train AUC: 0.9506, Val Loss: 0.1637, Val AUC: 0.9362, Time: 2.28s
+[2025-08-08 01:53:30] New best model saved with Val AUC: 0.9362
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9515 & 0.9898 & 0.1007 & 0.9344 & 0.9705 & 0.1647 & 2.25 \\
+[2025-08-08 01:53:32] Epoch  31/150 - Train Loss: 0.1007, Train AUC: 0.9515, Val Loss: 0.1647, Val AUC: 0.9344, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9502 & 0.9901 & 0.0999 & 0.9430 & 0.9742 & 0.1615 & 2.26 \\
+[2025-08-08 01:53:35] Epoch  32/150 - Train Loss: 0.0999, Train AUC: 0.9502, Val Loss: 0.1615, Val AUC: 0.9430, Time: 2.26s
+[2025-08-08 01:53:35] New best model saved with Val AUC: 0.9430
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9467 & 0.9888 & 0.1019 & 0.9334 & 0.9688 & 0.1684 & 2.26 \\
+[2025-08-08 01:53:37] Epoch  33/150 - Train Loss: 0.1019, Train AUC: 0.9467, Val Loss: 0.1684, Val AUC: 0.9334, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9500 & 0.9897 & 0.1061 & 0.9402 & 0.9733 & 0.1658 & 2.26 \\
+[2025-08-08 01:53:40] Epoch  34/150 - Train Loss: 0.1061, Train AUC: 0.9500, Val Loss: 0.1658, Val AUC: 0.9402, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9520 & 0.9905 & 0.0998 & 0.9481 & 0.9770 & 0.1607 & 2.25 \\
+[2025-08-08 01:53:42] Epoch  35/150 - Train Loss: 0.0998, Train AUC: 0.9520, Val Loss: 0.1607, Val AUC: 0.9481, Time: 2.25s
+[2025-08-08 01:53:43] New best model saved with Val AUC: 0.9481
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9515 & 0.9899 & 0.1015 & 0.9360 & 0.9708 & 0.1673 & 2.26 \\
+[2025-08-08 01:53:45] Epoch  36/150 - Train Loss: 0.1015, Train AUC: 0.9515, Val Loss: 0.1673, Val AUC: 0.9360, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9544 & 0.9905 & 0.1013 & 0.9426 & 0.9746 & 0.1571 & 2.24 \\
+[2025-08-08 01:53:48] Epoch  37/150 - Train Loss: 0.1013, Train AUC: 0.9544, Val Loss: 0.1571, Val AUC: 0.9426, Time: 2.24s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9521 & 0.9905 & 0.0976 & 0.9518 & 0.9788 & 0.1564 & 2.25 \\
+[2025-08-08 01:53:50] Epoch  38/150 - Train Loss: 0.0976, Train AUC: 0.9521, Val Loss: 0.1564, Val AUC: 0.9518, Time: 2.25s
+[2025-08-08 01:53:51] New best model saved with Val AUC: 0.9518
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9579 & 0.9914 & 0.1004 & 0.9476 & 0.9761 & 0.1551 & 2.27 \\
+[2025-08-08 01:53:53] Epoch  39/150 - Train Loss: 0.1004, Train AUC: 0.9579, Val Loss: 0.1551, Val AUC: 0.9476, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9576 & 0.9910 & 0.0958 & 0.9485 & 0.9759 & 0.1558 & 2.24 \\
+[2025-08-08 01:53:56] Epoch  40/150 - Train Loss: 0.0958, Train AUC: 0.9576, Val Loss: 0.1558, Val AUC: 0.9485, Time: 2.24s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9593 & 0.9918 & 0.0977 & 0.9540 & 0.9796 & 0.1502 & 2.24 \\
+[2025-08-08 01:53:58] Epoch  41/150 - Train Loss: 0.0977, Train AUC: 0.9593, Val Loss: 0.1502, Val AUC: 0.9540, Time: 2.24s
+[2025-08-08 01:53:59] New best model saved with Val AUC: 0.9540
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9597 & 0.9918 & 0.0957 & 0.9528 & 0.9794 & 0.1455 & 2.25 \\
+[2025-08-08 01:54:01] Epoch  42/150 - Train Loss: 0.0957, Train AUC: 0.9597, Val Loss: 0.1455, Val AUC: 0.9528, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9611 & 0.9920 & 0.0932 & 0.9536 & 0.9791 & 0.1517 & 2.25 \\
+[2025-08-08 01:54:04] Epoch  43/150 - Train Loss: 0.0932, Train AUC: 0.9611, Val Loss: 0.1517, Val AUC: 0.9536, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9622 & 0.9923 & 0.0943 & 0.9558 & 0.9806 & 0.1477 & 2.24 \\
+[2025-08-08 01:54:06] Epoch  44/150 - Train Loss: 0.0943, Train AUC: 0.9622, Val Loss: 0.1477, Val AUC: 0.9558, Time: 2.24s
+[2025-08-08 01:54:07] New best model saved with Val AUC: 0.9558
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9630 & 0.9925 & 0.0936 & 0.9545 & 0.9797 & 0.1518 & 2.24 \\
+[2025-08-08 01:54:09] Epoch  45/150 - Train Loss: 0.0936, Train AUC: 0.9630, Val Loss: 0.1518, Val AUC: 0.9545, Time: 2.24s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9623 & 0.9922 & 0.0930 & 0.9560 & 0.9803 & 0.1552 & 2.25 \\
+[2025-08-08 01:54:11] Epoch  46/150 - Train Loss: 0.0930, Train AUC: 0.9623, Val Loss: 0.1552, Val AUC: 0.9560, Time: 2.25s
+[2025-08-08 01:54:12] New best model saved with Val AUC: 0.9560
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9609 & 0.9920 & 0.0921 & 0.9551 & 0.9800 & 0.1500 & 2.23 \\
+[2025-08-08 01:54:14] Epoch  47/150 - Train Loss: 0.0921, Train AUC: 0.9609, Val Loss: 0.1500, Val AUC: 0.9551, Time: 2.23s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9649 & 0.9928 & 0.0922 & 0.9607 & 0.9823 & 0.1471 & 2.28 \\
+[2025-08-08 01:54:17] Epoch  48/150 - Train Loss: 0.0922, Train AUC: 0.9649, Val Loss: 0.1471, Val AUC: 0.9607, Time: 2.28s
+[2025-08-08 01:54:17] New best model saved with Val AUC: 0.9607
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9660 & 0.9930 & 0.0905 & 0.9618 & 0.9824 & 0.1476 & 2.27 \\
+[2025-08-08 01:54:19] Epoch  49/150 - Train Loss: 0.0905, Train AUC: 0.9660, Val Loss: 0.1476, Val AUC: 0.9618, Time: 2.27s
+[2025-08-08 01:54:20] New best model saved with Val AUC: 0.9618
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9655 & 0.9929 & 0.0908 & 0.9617 & 0.9827 & 0.1446 & 2.30 \\
+[2025-08-08 01:54:22] Epoch  50/150 - Train Loss: 0.0908, Train AUC: 0.9655, Val Loss: 0.1446, Val AUC: 0.9617, Time: 2.30s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9634 & 0.9926 & 0.0905 & 0.9586 & 0.9820 & 0.1451 & 2.26 \\
+[2025-08-08 01:54:25] Epoch  51/150 - Train Loss: 0.0905, Train AUC: 0.9634, Val Loss: 0.1451, Val AUC: 0.9586, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9646 & 0.9929 & 0.0911 & 0.9593 & 0.9815 & 0.1467 & 2.27 \\
+[2025-08-08 01:54:27] Epoch  52/150 - Train Loss: 0.0911, Train AUC: 0.9646, Val Loss: 0.1467, Val AUC: 0.9593, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9664 & 0.9932 & 0.0895 & 0.9614 & 0.9824 & 0.1455 & 2.25 \\
+[2025-08-08 01:54:30] Epoch  53/150 - Train Loss: 0.0895, Train AUC: 0.9664, Val Loss: 0.1455, Val AUC: 0.9614, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9660 & 0.9931 & 0.0902 & 0.9616 & 0.9825 & 0.1505 & 2.27 \\
+[2025-08-08 01:54:33] Epoch  54/150 - Train Loss: 0.0902, Train AUC: 0.9660, Val Loss: 0.1505, Val AUC: 0.9616, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9654 & 0.9930 & 0.0900 & 0.9623 & 0.9836 & 0.1426 & 2.24 \\
+[2025-08-08 01:54:35] Epoch  55/150 - Train Loss: 0.0900, Train AUC: 0.9654, Val Loss: 0.1426, Val AUC: 0.9623, Time: 2.24s
+[2025-08-08 01:54:36] New best model saved with Val AUC: 0.9623
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9666 & 0.9933 & 0.0900 & 0.9616 & 0.9830 & 0.1455 & 2.27 \\
+[2025-08-08 01:54:38] Epoch  56/150 - Train Loss: 0.0900, Train AUC: 0.9666, Val Loss: 0.1455, Val AUC: 0.9616, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9675 & 0.9934 & 0.0896 & 0.9638 & 0.9833 & 0.1466 & 2.26 \\
+[2025-08-08 01:54:41] Epoch  57/150 - Train Loss: 0.0896, Train AUC: 0.9675, Val Loss: 0.1466, Val AUC: 0.9638, Time: 2.26s
+[2025-08-08 01:54:41] New best model saved with Val AUC: 0.9638
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9678 & 0.9935 & 0.0891 & 0.9639 & 0.9835 & 0.1427 & 2.25 \\
+[2025-08-08 01:54:43] Epoch  58/150 - Train Loss: 0.0891, Train AUC: 0.9678, Val Loss: 0.1427, Val AUC: 0.9639, Time: 2.25s
+[2025-08-08 01:54:44] New best model saved with Val AUC: 0.9639
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9660 & 0.9931 & 0.0892 & 0.9635 & 0.9836 & 0.1397 & 2.25 \\
+[2025-08-08 01:54:46] Epoch  59/150 - Train Loss: 0.0892, Train AUC: 0.9660, Val Loss: 0.1397, Val AUC: 0.9635, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9659 & 0.9933 & 0.0890 & 0.9631 & 0.9837 & 0.1392 & 2.27 \\
+[2025-08-08 01:54:48] Epoch  60/150 - Train Loss: 0.0890, Train AUC: 0.9659, Val Loss: 0.1392, Val AUC: 0.9631, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9675 & 0.9935 & 0.0886 & 0.9652 & 0.9848 & 0.1352 & 2.25 \\
+[2025-08-08 01:54:51] Epoch  61/150 - Train Loss: 0.0886, Train AUC: 0.9675, Val Loss: 0.1352, Val AUC: 0.9652, Time: 2.25s
+[2025-08-08 01:54:51] New best model saved with Val AUC: 0.9652
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9681 & 0.9935 & 0.0889 & 0.9665 & 0.9843 & 0.1399 & 2.28 \\
+[2025-08-08 01:54:54] Epoch  62/150 - Train Loss: 0.0889, Train AUC: 0.9681, Val Loss: 0.1399, Val AUC: 0.9665, Time: 2.28s
+[2025-08-08 01:54:54] New best model saved with Val AUC: 0.9665
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9674 & 0.9934 & 0.0886 & 0.9656 & 0.9850 & 0.1389 & 2.27 \\
+[2025-08-08 01:54:56] Epoch  63/150 - Train Loss: 0.0886, Train AUC: 0.9674, Val Loss: 0.1389, Val AUC: 0.9656, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9688 & 0.9938 & 0.0879 & 0.9648 & 0.9837 & 0.1415 & 2.26 \\
+[2025-08-08 01:54:59] Epoch  64/150 - Train Loss: 0.0879, Train AUC: 0.9688, Val Loss: 0.1415, Val AUC: 0.9648, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9697 & 0.9940 & 0.0880 & 0.9669 & 0.9854 & 0.1335 & 2.26 \\
+[2025-08-08 01:55:02] Epoch  65/150 - Train Loss: 0.0880, Train AUC: 0.9697, Val Loss: 0.1335, Val AUC: 0.9669, Time: 2.26s
+[2025-08-08 01:55:02] New best model saved with Val AUC: 0.9669
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9686 & 0.9936 & 0.0874 & 0.9640 & 0.9841 & 0.1406 & 2.25 \\
+[2025-08-08 01:55:04] Epoch  66/150 - Train Loss: 0.0874, Train AUC: 0.9686, Val Loss: 0.1406, Val AUC: 0.9640, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9690 & 0.9938 & 0.0871 & 0.9657 & 0.9846 & 0.1408 & 2.26 \\
+[2025-08-08 01:55:07] Epoch  67/150 - Train Loss: 0.0871, Train AUC: 0.9690, Val Loss: 0.1408, Val AUC: 0.9657, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9690 & 0.9938 & 0.0871 & 0.9664 & 0.9855 & 0.1322 & 2.25 \\
+[2025-08-08 01:55:10] Epoch  68/150 - Train Loss: 0.0871, Train AUC: 0.9690, Val Loss: 0.1322, Val AUC: 0.9664, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9678 & 0.9936 & 0.0873 & 0.9639 & 0.9839 & 0.1376 & 2.28 \\
+[2025-08-08 01:55:12] Epoch  69/150 - Train Loss: 0.0873, Train AUC: 0.9678, Val Loss: 0.1376, Val AUC: 0.9639, Time: 2.28s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9684 & 0.9936 & 0.0871 & 0.9670 & 0.9855 & 0.1314 & 2.24 \\
+[2025-08-08 01:55:15] Epoch  70/150 - Train Loss: 0.0871, Train AUC: 0.9684, Val Loss: 0.1314, Val AUC: 0.9670, Time: 2.24s
+[2025-08-08 01:55:15] New best model saved with Val AUC: 0.9670
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9695 & 0.9939 & 0.0874 & 0.9666 & 0.9847 & 0.1389 & 2.28 \\
+[2025-08-08 01:55:18] Epoch  71/150 - Train Loss: 0.0874, Train AUC: 0.9695, Val Loss: 0.1389, Val AUC: 0.9666, Time: 2.28s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9695 & 0.9938 & 0.0874 & 0.9683 & 0.9866 & 0.1302 & 2.25 \\
+[2025-08-08 01:55:20] Epoch  72/150 - Train Loss: 0.0874, Train AUC: 0.9695, Val Loss: 0.1302, Val AUC: 0.9683, Time: 2.25s
+[2025-08-08 01:55:21] New best model saved with Val AUC: 0.9683
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9707 & 0.9943 & 0.0874 & 0.9697 & 0.9870 & 0.1350 & 2.33 \\
+[2025-08-08 01:55:23] Epoch  73/150 - Train Loss: 0.0874, Train AUC: 0.9707, Val Loss: 0.1350, Val AUC: 0.9697, Time: 2.33s
+[2025-08-08 01:55:23] New best model saved with Val AUC: 0.9697
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9683 & 0.9936 & 0.0877 & 0.9681 & 0.9855 & 0.1355 & 2.26 \\
+[2025-08-08 01:55:26] Epoch  74/150 - Train Loss: 0.0877, Train AUC: 0.9683, Val Loss: 0.1355, Val AUC: 0.9681, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9684 & 0.9938 & 0.0880 & 0.9669 & 0.9852 & 0.1430 & 2.25 \\
+[2025-08-08 01:55:28] Epoch  75/150 - Train Loss: 0.0880, Train AUC: 0.9684, Val Loss: 0.1430, Val AUC: 0.9669, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9694 & 0.9939 & 0.0877 & 0.9671 & 0.9850 & 0.1364 & 2.27 \\
+[2025-08-08 01:55:31] Epoch  76/150 - Train Loss: 0.0877, Train AUC: 0.9694, Val Loss: 0.1364, Val AUC: 0.9671, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9703 & 0.9941 & 0.0867 & 0.9691 & 0.9873 & 0.1317 & 2.27 \\
+[2025-08-08 01:55:33] Epoch  77/150 - Train Loss: 0.0867, Train AUC: 0.9703, Val Loss: 0.1317, Val AUC: 0.9691, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9700 & 0.9940 & 0.0862 & 0.9697 & 0.9870 & 0.1335 & 2.28 \\
+[2025-08-08 01:55:36] Epoch  78/150 - Train Loss: 0.0862, Train AUC: 0.9700, Val Loss: 0.1335, Val AUC: 0.9697, Time: 2.28s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9707 & 0.9941 & 0.0860 & 0.9676 & 0.9860 & 0.1331 & 2.27 \\
+[2025-08-08 01:55:39] Epoch  79/150 - Train Loss: 0.0860, Train AUC: 0.9707, Val Loss: 0.1331, Val AUC: 0.9676, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9695 & 0.9941 & 0.0862 & 0.9674 & 0.9861 & 0.1385 & 2.25 \\
+[2025-08-08 01:55:41] Epoch  80/150 - Train Loss: 0.0862, Train AUC: 0.9695, Val Loss: 0.1385, Val AUC: 0.9674, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9695 & 0.9940 & 0.0872 & 0.9693 & 0.9867 & 0.1367 & 2.25 \\
+[2025-08-08 01:55:44] Epoch  81/150 - Train Loss: 0.0872, Train AUC: 0.9695, Val Loss: 0.1367, Val AUC: 0.9693, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9707 & 0.9943 & 0.0865 & 0.9689 & 0.9868 & 0.1363 & 2.27 \\
+[2025-08-08 01:55:47] Epoch  82/150 - Train Loss: 0.0865, Train AUC: 0.9707, Val Loss: 0.1363, Val AUC: 0.9689, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9712 & 0.9943 & 0.0856 & 0.9690 & 0.9868 & 0.1352 & 2.25 \\
+[2025-08-08 01:55:49] Epoch  83/150 - Train Loss: 0.0856, Train AUC: 0.9712, Val Loss: 0.1352, Val AUC: 0.9690, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9703 & 0.9941 & 0.0851 & 0.9690 & 0.9866 & 0.1311 & 2.25 \\
+[2025-08-08 01:55:52] Epoch  84/150 - Train Loss: 0.0851, Train AUC: 0.9703, Val Loss: 0.1311, Val AUC: 0.9690, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9707 & 0.9942 & 0.0855 & 0.9683 & 0.9865 & 0.1324 & 2.28 \\
+[2025-08-08 01:55:55] Epoch  85/150 - Train Loss: 0.0855, Train AUC: 0.9707, Val Loss: 0.1324, Val AUC: 0.9683, Time: 2.28s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9703 & 0.9940 & 0.0859 & 0.9690 & 0.9867 & 0.1308 & 2.25 \\
+[2025-08-08 01:55:57] Epoch  86/150 - Train Loss: 0.0859, Train AUC: 0.9703, Val Loss: 0.1308, Val AUC: 0.9690, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9706 & 0.9942 & 0.0857 & 0.9698 & 0.9871 & 0.1343 & 2.26 \\
+[2025-08-08 01:56:00] Epoch  87/150 - Train Loss: 0.0857, Train AUC: 0.9706, Val Loss: 0.1343, Val AUC: 0.9698, Time: 2.26s
+[2025-08-08 01:56:00] New best model saved with Val AUC: 0.9698
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9706 & 0.9942 & 0.0851 & 0.9702 & 0.9871 & 0.1326 & 2.26 \\
+[2025-08-08 01:56:03] Epoch  88/150 - Train Loss: 0.0851, Train AUC: 0.9706, Val Loss: 0.1326, Val AUC: 0.9702, Time: 2.26s
+[2025-08-08 01:56:03] New best model saved with Val AUC: 0.9702
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9709 & 0.9943 & 0.0862 & 0.9703 & 0.9869 & 0.1478 & 2.27 \\
+[2025-08-08 01:56:05] Epoch  89/150 - Train Loss: 0.0862, Train AUC: 0.9709, Val Loss: 0.1478, Val AUC: 0.9703, Time: 2.27s
+[2025-08-08 01:56:06] New best model saved with Val AUC: 0.9703
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9703 & 0.9942 & 0.0856 & 0.9707 & 0.9878 & 0.1321 & 2.25 \\
+[2025-08-08 01:56:08] Epoch  90/150 - Train Loss: 0.0856, Train AUC: 0.9703, Val Loss: 0.1321, Val AUC: 0.9707, Time: 2.25s
+[2025-08-08 01:56:08] New best model saved with Val AUC: 0.9707
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9710 & 0.9943 & 0.0858 & 0.9702 & 0.9874 & 0.1321 & 2.27 \\
+[2025-08-08 01:56:10] Epoch  91/150 - Train Loss: 0.0858, Train AUC: 0.9710, Val Loss: 0.1321, Val AUC: 0.9702, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9713 & 0.9944 & 0.0858 & 0.9704 & 0.9878 & 0.1300 & 2.28 \\
+[2025-08-08 01:56:13] Epoch  92/150 - Train Loss: 0.0858, Train AUC: 0.9713, Val Loss: 0.1300, Val AUC: 0.9704, Time: 2.28s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9717 & 0.9944 & 0.0849 & 0.9716 & 0.9884 & 0.1282 & 2.28 \\
+[2025-08-08 01:56:16] Epoch  93/150 - Train Loss: 0.0849, Train AUC: 0.9717, Val Loss: 0.1282, Val AUC: 0.9716, Time: 2.28s
+[2025-08-08 01:56:16] New best model saved with Val AUC: 0.9716
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9716 & 0.9944 & 0.0851 & 0.9692 & 0.9864 & 0.1342 & 2.25 \\
+[2025-08-08 01:56:18] Epoch  94/150 - Train Loss: 0.0851, Train AUC: 0.9716, Val Loss: 0.1342, Val AUC: 0.9692, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9711 & 0.9942 & 0.0850 & 0.9687 & 0.9864 & 0.1345 & 2.28 \\
+[2025-08-08 01:56:21] Epoch  95/150 - Train Loss: 0.0850, Train AUC: 0.9711, Val Loss: 0.1345, Val AUC: 0.9687, Time: 2.28s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9710 & 0.9943 & 0.0860 & 0.9697 & 0.9876 & 0.1303 & 2.27 \\
+[2025-08-08 01:56:24] Epoch  96/150 - Train Loss: 0.0860, Train AUC: 0.9710, Val Loss: 0.1303, Val AUC: 0.9697, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9712 & 0.9944 & 0.0857 & 0.9701 & 0.9871 & 0.1324 & 2.26 \\
+[2025-08-08 01:56:26] Epoch  97/150 - Train Loss: 0.0857, Train AUC: 0.9712, Val Loss: 0.1324, Val AUC: 0.9701, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9712 & 0.9943 & 0.0850 & 0.9707 & 0.9874 & 0.1320 & 2.24 \\
+[2025-08-08 01:56:29] Epoch  98/150 - Train Loss: 0.0850, Train AUC: 0.9712, Val Loss: 0.1320, Val AUC: 0.9707, Time: 2.24s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9710 & 0.9943 & 0.0851 & 0.9711 & 0.9878 & 0.1315 & 2.27 \\
+[2025-08-08 01:56:32] Epoch  99/150 - Train Loss: 0.0851, Train AUC: 0.9710, Val Loss: 0.1315, Val AUC: 0.9711, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9710 & 0.9944 & 0.0845 & 0.9700 & 0.9870 & 0.1345 & 2.25 \\
+[2025-08-08 01:56:34] Epoch 100/150 - Train Loss: 0.0845, Train AUC: 0.9710, Val Loss: 0.1345, Val AUC: 0.9700, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9715 & 0.9944 & 0.0852 & 0.9720 & 0.9878 & 0.1324 & 2.27 \\
+[2025-08-08 01:56:37] Epoch 101/150 - Train Loss: 0.0852, Train AUC: 0.9715, Val Loss: 0.1324, Val AUC: 0.9720, Time: 2.27s
+[2025-08-08 01:56:37] New best model saved with Val AUC: 0.9720
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9712 & 0.9943 & 0.0844 & 0.9721 & 0.9881 & 0.1305 & 2.27 \\
+[2025-08-08 01:56:40] Epoch 102/150 - Train Loss: 0.0844, Train AUC: 0.9712, Val Loss: 0.1305, Val AUC: 0.9721, Time: 2.27s
+[2025-08-08 01:56:40] New best model saved with Val AUC: 0.9721
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9718 & 0.9944 & 0.0850 & 0.9723 & 0.9878 & 0.1304 & 2.27 \\
+[2025-08-08 01:56:42] Epoch 103/150 - Train Loss: 0.0850, Train AUC: 0.9718, Val Loss: 0.1304, Val AUC: 0.9723, Time: 2.27s
+[2025-08-08 01:56:43] New best model saved with Val AUC: 0.9723
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9722 & 0.9945 & 0.0855 & 0.9701 & 0.9867 & 0.1349 & 2.26 \\
+[2025-08-08 01:56:45] Epoch 104/150 - Train Loss: 0.0855, Train AUC: 0.9722, Val Loss: 0.1349, Val AUC: 0.9701, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9723 & 0.9946 & 0.0852 & 0.9713 & 0.9877 & 0.1304 & 2.29 \\
+[2025-08-08 01:56:48] Epoch 105/150 - Train Loss: 0.0852, Train AUC: 0.9723, Val Loss: 0.1304, Val AUC: 0.9713, Time: 2.29s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9718 & 0.9944 & 0.0850 & 0.9718 & 0.9886 & 0.1280 & 2.26 \\
+[2025-08-08 01:56:50] Epoch 106/150 - Train Loss: 0.0850, Train AUC: 0.9718, Val Loss: 0.1280, Val AUC: 0.9718, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9719 & 0.9945 & 0.0849 & 0.9708 & 0.9870 & 0.1344 & 2.25 \\
+[2025-08-08 01:56:53] Epoch 107/150 - Train Loss: 0.0849, Train AUC: 0.9719, Val Loss: 0.1344, Val AUC: 0.9708, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9719 & 0.9945 & 0.0846 & 0.9708 & 0.9874 & 0.1320 & 2.26 \\
+[2025-08-08 01:56:55] Epoch 108/150 - Train Loss: 0.0846, Train AUC: 0.9719, Val Loss: 0.1320, Val AUC: 0.9708, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9712 & 0.9943 & 0.0848 & 0.9719 & 0.9879 & 0.1323 & 2.24 \\
+[2025-08-08 01:56:58] Epoch 109/150 - Train Loss: 0.0848, Train AUC: 0.9712, Val Loss: 0.1323, Val AUC: 0.9719, Time: 2.24s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9717 & 0.9945 & 0.0850 & 0.9722 & 0.9884 & 0.1298 & 2.26 \\
+[2025-08-08 01:57:01] Epoch 110/150 - Train Loss: 0.0850, Train AUC: 0.9717, Val Loss: 0.1298, Val AUC: 0.9722, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9715 & 0.9944 & 0.0846 & 0.9706 & 0.9880 & 0.1313 & 2.25 \\
+[2025-08-08 01:57:03] Epoch 111/150 - Train Loss: 0.0846, Train AUC: 0.9715, Val Loss: 0.1313, Val AUC: 0.9706, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9716 & 0.9944 & 0.0843 & 0.9690 & 0.9865 & 0.1347 & 2.24 \\
+[2025-08-08 01:57:06] Epoch 112/150 - Train Loss: 0.0843, Train AUC: 0.9716, Val Loss: 0.1347, Val AUC: 0.9690, Time: 2.24s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9717 & 0.9944 & 0.0845 & 0.9696 & 0.9869 & 0.1336 & 2.24 \\
+[2025-08-08 01:57:09] Epoch 113/150 - Train Loss: 0.0845, Train AUC: 0.9717, Val Loss: 0.1336, Val AUC: 0.9696, Time: 2.24s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9718 & 0.9945 & 0.0846 & 0.9712 & 0.9876 & 0.1310 & 2.27 \\
+[2025-08-08 01:57:11] Epoch 114/150 - Train Loss: 0.0846, Train AUC: 0.9718, Val Loss: 0.1310, Val AUC: 0.9712, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9719 & 0.9945 & 0.0841 & 0.9717 & 0.9883 & 0.1310 & 2.25 \\
+[2025-08-08 01:57:14] Epoch 115/150 - Train Loss: 0.0841, Train AUC: 0.9719, Val Loss: 0.1310, Val AUC: 0.9717, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9721 & 0.9946 & 0.0849 & 0.9695 & 0.9866 & 0.1348 & 2.27 \\
+[2025-08-08 01:57:17] Epoch 116/150 - Train Loss: 0.0849, Train AUC: 0.9721, Val Loss: 0.1348, Val AUC: 0.9695, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9724 & 0.9946 & 0.0848 & 0.9713 & 0.9879 & 0.1312 & 2.26 \\
+[2025-08-08 01:57:19] Epoch 117/150 - Train Loss: 0.0848, Train AUC: 0.9724, Val Loss: 0.1312, Val AUC: 0.9713, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9718 & 0.9944 & 0.0844 & 0.9709 & 0.9876 & 0.1301 & 2.28 \\
+[2025-08-08 01:57:22] Epoch 118/150 - Train Loss: 0.0844, Train AUC: 0.9718, Val Loss: 0.1301, Val AUC: 0.9709, Time: 2.28s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9723 & 0.9945 & 0.0856 & 0.9699 & 0.9869 & 0.1326 & 2.27 \\
+[2025-08-08 01:57:24] Epoch 119/150 - Train Loss: 0.0856, Train AUC: 0.9723, Val Loss: 0.1326, Val AUC: 0.9699, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9719 & 0.9945 & 0.0843 & 0.9729 & 0.9888 & 0.1283 & 2.29 \\
+[2025-08-08 01:57:27] Epoch 120/150 - Train Loss: 0.0843, Train AUC: 0.9719, Val Loss: 0.1283, Val AUC: 0.9729, Time: 2.29s
+[2025-08-08 01:57:28] New best model saved with Val AUC: 0.9729
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9721 & 0.9945 & 0.0850 & 0.9702 & 0.9872 & 0.1347 & 2.28 \\
+[2025-08-08 01:57:30] Epoch 121/150 - Train Loss: 0.0850, Train AUC: 0.9721, Val Loss: 0.1347, Val AUC: 0.9702, Time: 2.28s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9716 & 0.9944 & 0.0845 & 0.9698 & 0.9870 & 0.1348 & 2.27 \\
+[2025-08-08 01:57:32] Epoch 122/150 - Train Loss: 0.0845, Train AUC: 0.9716, Val Loss: 0.1348, Val AUC: 0.9698, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9721 & 0.9945 & 0.0849 & 0.9706 & 0.9878 & 0.1296 & 2.24 \\
+[2025-08-08 01:57:35] Epoch 123/150 - Train Loss: 0.0849, Train AUC: 0.9721, Val Loss: 0.1296, Val AUC: 0.9706, Time: 2.24s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9721 & 0.9945 & 0.0847 & 0.9724 & 0.9882 & 0.1291 & 2.25 \\
+[2025-08-08 01:57:38] Epoch 124/150 - Train Loss: 0.0847, Train AUC: 0.9721, Val Loss: 0.1291, Val AUC: 0.9724, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9720 & 0.9946 & 0.0849 & 0.9703 & 0.9874 & 0.1313 & 2.25 \\
+[2025-08-08 01:57:40] Epoch 125/150 - Train Loss: 0.0849, Train AUC: 0.9720, Val Loss: 0.1313, Val AUC: 0.9703, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9721 & 0.9945 & 0.0851 & 0.9703 & 0.9876 & 0.1305 & 2.25 \\
+[2025-08-08 01:57:43] Epoch 126/150 - Train Loss: 0.0851, Train AUC: 0.9721, Val Loss: 0.1305, Val AUC: 0.9703, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9720 & 0.9945 & 0.0847 & 0.9710 & 0.9874 & 0.1321 & 2.25 \\
+[2025-08-08 01:57:46] Epoch 127/150 - Train Loss: 0.0847, Train AUC: 0.9720, Val Loss: 0.1321, Val AUC: 0.9710, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9722 & 0.9945 & 0.0847 & 0.9710 & 0.9876 & 0.1311 & 2.25 \\
+[2025-08-08 01:57:48] Epoch 128/150 - Train Loss: 0.0847, Train AUC: 0.9722, Val Loss: 0.1311, Val AUC: 0.9710, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9720 & 0.9945 & 0.0847 & 0.9705 & 0.9869 & 0.1327 & 2.26 \\
+[2025-08-08 01:57:51] Epoch 129/150 - Train Loss: 0.0847, Train AUC: 0.9720, Val Loss: 0.1327, Val AUC: 0.9705, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9719 & 0.9945 & 0.0847 & 0.9692 & 0.9870 & 0.1337 & 2.25 \\
+[2025-08-08 01:57:54] Epoch 130/150 - Train Loss: 0.0847, Train AUC: 0.9719, Val Loss: 0.1337, Val AUC: 0.9692, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9717 & 0.9944 & 0.0844 & 0.9722 & 0.9884 & 0.1285 & 2.26 \\
+[2025-08-08 01:57:56] Epoch 131/150 - Train Loss: 0.0844, Train AUC: 0.9717, Val Loss: 0.1285, Val AUC: 0.9722, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9718 & 0.9944 & 0.0849 & 0.9728 & 0.9891 & 0.1280 & 2.24 \\
+[2025-08-08 01:57:59] Epoch 132/150 - Train Loss: 0.0849, Train AUC: 0.9718, Val Loss: 0.1280, Val AUC: 0.9728, Time: 2.24s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9719 & 0.9945 & 0.0842 & 0.9715 & 0.9881 & 0.1287 & 2.25 \\
+[2025-08-08 01:58:01] Epoch 133/150 - Train Loss: 0.0842, Train AUC: 0.9719, Val Loss: 0.1287, Val AUC: 0.9715, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9713 & 0.9943 & 0.0841 & 0.9708 & 0.9871 & 0.1371 & 2.27 \\
+[2025-08-08 01:58:04] Epoch 134/150 - Train Loss: 0.0841, Train AUC: 0.9713, Val Loss: 0.1371, Val AUC: 0.9708, Time: 2.27s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9721 & 0.9945 & 0.0848 & 0.9723 & 0.9884 & 0.1272 & 2.26 \\
+[2025-08-08 01:58:07] Epoch 135/150 - Train Loss: 0.0848, Train AUC: 0.9721, Val Loss: 0.1272, Val AUC: 0.9723, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9717 & 0.9944 & 0.0850 & 0.9705 & 0.9875 & 0.1302 & 2.26 \\
+[2025-08-08 01:58:09] Epoch 136/150 - Train Loss: 0.0850, Train AUC: 0.9717, Val Loss: 0.1302, Val AUC: 0.9705, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9721 & 0.9945 & 0.0842 & 0.9688 & 0.9866 & 0.1348 & 2.25 \\
+[2025-08-08 01:58:12] Epoch 137/150 - Train Loss: 0.0842, Train AUC: 0.9721, Val Loss: 0.1348, Val AUC: 0.9688, Time: 2.25s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9722 & 0.9946 & 0.0847 & 0.9727 & 0.9885 & 0.1275 & 2.26 \\
+[2025-08-08 01:58:15] Epoch 138/150 - Train Loss: 0.0847, Train AUC: 0.9722, Val Loss: 0.1275, Val AUC: 0.9727, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9720 & 0.9945 & 0.0846 & 0.9715 & 0.9879 & 0.1307 & 2.26 \\
+[2025-08-08 01:58:17] Epoch 139/150 - Train Loss: 0.0846, Train AUC: 0.9720, Val Loss: 0.1307, Val AUC: 0.9715, Time: 2.26s
+GAT(h256,hd2,L2) & NVIDIA L4 & 0.9722 & 0.9945 & 0.0844 & 0.9699 & 0.9870 & 0.1313 & 2.26 \\
+[2025-08-08 01:58:20] Epoch 140/150 - Train Loss: 0.0844, Train AUC: 0.9722, Val Loss: 0.1313, Val AUC: 0.9699, Time: 2.26s
+[2025-08-08 01:58:20] Early stopping triggered after 140 epochs
+[2025-08-08 01:58:20] Training completed. Evaluating on test set...
+[2025-08-08 01:58:20] Final Test Results - Loss: 0.1288, AUC: 0.9723, AP: 0.9889
+[2025-08-08 01:58:22] Training history plot saved to logs/gat_training_history_20250808_015820.png
+[2025-08-08 01:58:22] Training results saved to logs/gat_training_results_20250808_015820.json
+[2025-08-08 01:58:22] Training completed successfully!
