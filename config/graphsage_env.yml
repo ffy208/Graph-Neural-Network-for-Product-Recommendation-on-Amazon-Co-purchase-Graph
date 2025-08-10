@@ -1,0 +1,17 @@
+name: gnn-graphsage
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch
+  - pytorch-cuda=12.1        # omit this line if using CPU-only
+  - pip
+  - pip:
+      - torch-geometric
+      - pandas
+      - scikit-learn
+      - sentence-transformers
+      - matplotlib
+      - tqdm

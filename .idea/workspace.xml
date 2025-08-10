@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eca184c3-22b8-4b78-bc1a-4ed6466126ba" name="Changes" comment="GraphSage notebook and results">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/GraphSage_optimal_log.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/figure_plot.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/figure_plot.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/GraphSage_training_history_40epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/GraphSage_optimal.json" beforeDir="false" afterPath="$PROJECT_DIR$/results/GraphSage_optimal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/requirements_graphsage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/requirements_graphsage.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -173,7 +171,7 @@
       <updated>1753402958993</updated>
       <workItem from="1753402960149" duration="1406000" />
       <workItem from="1753917294218" duration="260000" />
-      <workItem from="1753917557790" duration="14121000" />
+      <workItem from="1753917557790" duration="16587000" />
     </task>
     <task id="LOCAL-00001" summary="GraphSage notebook and results">
       <option name="closed" value="true" />
